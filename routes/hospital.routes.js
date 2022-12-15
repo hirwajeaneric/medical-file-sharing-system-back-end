@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { testing } = require('../controllers/hospital.controller');
+const { testing, findAll, findById, upload, attachFile, add, update } = require('../controllers/hospital.controller');
 
 router.get('/test', testing);
+router.get('/list', findAll);
+router.get('/findById', findById);
+router.post('/add', upload.single('fileAttachment'), attachFile, add);
+router.put('/update', upload.single('fileAttachment'), attachFile, update);
 
 module.exports = router;
