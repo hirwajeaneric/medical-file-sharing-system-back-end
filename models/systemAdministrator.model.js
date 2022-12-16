@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 
 const adminModel = new mongoose.Schema({
-    username: {type: String, required: true},
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
     email: {type: String, required: true},
