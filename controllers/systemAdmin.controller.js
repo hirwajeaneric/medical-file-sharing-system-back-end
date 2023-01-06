@@ -2,6 +2,7 @@ const systemAdminModel = require('../models/systemAdministrator.model');
 const fs = require('fs');
 const multer = require('multer');
 const moment = require('moment');
+const bcrypt = require('bcrypt');
 const {validateSystemAdminSignin, validateSystemAdminSignup} = require('../services/validateSigninAndSignup');
 
 exports.testing = (req, res, next) => {
