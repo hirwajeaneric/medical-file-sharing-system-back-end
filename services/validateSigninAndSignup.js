@@ -66,3 +66,10 @@ exports.validateSystemAdminSignup = data =>{
     })
     return schema.validate(data)   
 }
+
+exports.validateEmail = data => {
+    const schema = Joi.object({
+        email: Joi.string().email().required().label("Email")
+    })
+    return schema.validate(data);
+}
