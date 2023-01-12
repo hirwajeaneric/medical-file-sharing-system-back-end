@@ -1,9 +1,9 @@
-const hospitalPersonnelModel = require('../models/hospitalPersonnel.model');
+const institutionPersonnelModel = require('../models/institutionPersonnel.model');
 const fs = require('fs');
 const multer = require('multer');
 const moment = require('moment');
 const bcrypt = require('bcrypt');
-const { validateHospitalPersonnelSignin, validateHospitalPersonnelSignup} = require('../services/validateSigninAndSignup');
+const { validateInstitutionPersonnelSignin, validateInstitutionPersonnelSignup} = require('../services/validateSigninAndSignup');
 
 exports.testing = (req, res, next) => {
     res.send('Admin Router works well!');
@@ -11,31 +11,31 @@ exports.testing = (req, res, next) => {
 
 exports.signin = async (req, res, next) => {
     try {
-        const {error} = validateHospitalPersonnelSignin(req.body);
+        const {error} = validateInstitutionPersonnelSignin(req.body);
         if (error) {
             return res.status(400).send({
                 message: error.details[0].message
             })
         } 
         
-        const hospitalPersonnel = await hospitalPersonnelModel.findOne({userCode: req.body.userCode});
-        if (!hospitalPersonnel) {
+        const institutionPersonnel = await institutionPersonnelModel.findOne({userCode: req.body.userCode});
+        if (!institutionPersonnel) {
             return res.status(401).send({ 
                 message: "Invalid credentials"
             })
         }
 
-        const validPassword = await bcrypt.compare(req.body.password, hospitalPersonnel.password);
+        const validPassword = await bcrypt.compare(req.body.password, institutionPersonnel.password);
         if (!validPassword) {
             return res.status(401).send({
                 message: "Invalid credentials"
             })
         }
 
-        const token = hospitalPersonnel.generateAuthToken();
+        const token = institutionPersonnel.generateAuthToken();
         res.status(200).send({
             token: token,
-            user: hospitalPersonnel
+            user: institutionPersonnel
         })
     } catch(error){
         res.status(500).send({
@@ -46,14 +46,14 @@ exports.signin = async (req, res, next) => {
 
 exports.signup = async (req, res, next) => {
     try {
-        const {error} = validateHospitalPersonnelSignup(req.body);
+        const {error} = validateInstitutionPersonnelSignup(req.body);
         if (error) {
             return res.status(400).send({
                 message: error.details[0].message
             })
         }
 
-        const emailAlreadyRegistered = await hospitalPersonnelModel.findOne({ email: req.body.email});
+        const emailAlreadyRegistered = await institutionPersonnelModel.findOne({ email: req.body.email});
         if (emailAlreadyRegistered) {
             return res.status(409).send({ 
                 message: "This email address is already registered"
@@ -63,7 +63,7 @@ exports.signup = async (req, res, next) => {
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-        await new hospitalPersonnelModel({ 
+        await new institutionPersonnelModel({ 
             ...req.body, password: hashedPassword
         }).save();
         
@@ -87,7 +87,7 @@ exports.resetPassword = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-    hospitalPersonnelModel.findByIdAndUpdate(req.query.id)
+    institutionPersonnelModel.findByIdAndUpdate(req.query.id)
     .then(response => {
         res.status(201).send(response);
     })
@@ -97,7 +97,7 @@ exports.update = (req, res, next) => {
 }
 
 exports.findAll = (req, res, next) => {
-    hospitalPersonnelModel.find() 
+    institutionPersonnelModel.find() 
     .then(response => {
         res.status(201).send(response);
     })
@@ -107,7 +107,7 @@ exports.findAll = (req, res, next) => {
 }
 
 exports.findById = (req, res, next) => {
-    hospitalPersonnelModel.findById(req.query.id) 
+    institutionPersonnelModel.findById(req.query.id) 
     .then(response => {
         res.status(201).send(response);
     })
@@ -118,7 +118,7 @@ exports.findById = (req, res, next) => {
 
 exports.findByEmail = (req, res, next) => {
     const email = req.query.email;
-    hospitalPersonnelModel.find({email}) 
+    institutionPersonnelModel.find({email}) 
     .then(response => {
         res.status(201).send(response);
     })
@@ -129,7 +129,7 @@ exports.findByEmail = (req, res, next) => {
 
 exports.findByRole = (req, res, next) => {
     const role = req.query.role;
-    hospitalPersonnelModel.find({role}) 
+    institutionPersonnelModel.find({role}) 
     .then(response => {
         res.status(201).send(response);
     })
@@ -138,9 +138,9 @@ exports.findByRole = (req, res, next) => {
     })
 }
 
-exports.findByHospitalId = (req, res, next) => {
-    const hospitalId = req.query.hospitalId;
-    hospitalPersonnelModel.find({hospitalId}) 
+exports.findByInstitutionId = (req, res, next) => {
+    const institutionId = req.query.institutionId;
+    institutionPersonnelModel.find({institutionId}) 
     .then(response => {
         res.status(201).send(response);
     })
@@ -149,9 +149,9 @@ exports.findByHospitalId = (req, res, next) => {
     })
 }
 
-exports.findByHospitalName = (req, res, next) => {
-    const hospitalName = req.query.hospitalName;
-    hospitalPersonnelModel.find({hospitalName}) 
+exports.findByInstitutionName = (req, res, next) => {
+    const institutionName = req.query.institutionName;
+    institutionPersonnelModel.find({institutionName}) 
     .then(response => {
         res.status(201).send(response);
     })

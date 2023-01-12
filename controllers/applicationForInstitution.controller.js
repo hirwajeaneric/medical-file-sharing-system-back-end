@@ -1,4 +1,4 @@
-const applicationForHospitalModel = require('../models/applicationForHospital');
+const applicationForInstitutionModel = require('../models/applicationForInstitution');
 const fs = require('fs');
 const multer = require('multer');
 const moment = require('moment');
@@ -8,7 +8,7 @@ exports.testing = (req, res, next) => {
 }
 
 exports.add = (req, res, next) => {
-    applicationForHospitalModel.create(req.body)
+    applicationForInstitutionModel.create(req.body)
     .then(response => {
         res.status(201).send(response);
     })
@@ -18,7 +18,7 @@ exports.add = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-    applicationForHospitalModel.findByIdAndUpdate(req.query.id)
+    applicationForInstitutionModel.findByIdAndUpdate(req.query.id)
     .then(response => {
         res.status(201).send(response);
     })
@@ -28,7 +28,7 @@ exports.update = (req, res, next) => {
 }
 
 exports.findAll = (req, res, next) => {
-    applicationForHospitalModel.find() 
+    applicationForInstitutionModel.find() 
     .then(response => {
         res.status(200).send(response);
     })
@@ -38,7 +38,7 @@ exports.findAll = (req, res, next) => {
 }
 
 exports.findById = (req, res, next) => {
-    applicationForHospitalModel.findById(req.query.id) 
+    applicationForInstitutionModel.findById(req.query.id) 
     .then(response => {
         res.status(200).send(response);
     })

@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const passwordComplexity = require('joi-password-complexity');
 
-exports.validateHospitalPersonnelSignin = data =>{
+exports.validateInstitutionPersonnelSignin = data =>{
     const schema = Joi.object({
         userCode: Joi.string().required().label('User code'),
         password: Joi.string().required().label('Password'),
@@ -9,15 +9,15 @@ exports.validateHospitalPersonnelSignin = data =>{
     return schema.validate(data)
 }
 
-exports.validateHospitalPersonnelSignup = data =>{
+exports.validateInstitutionPersonnelSignup = data =>{
     const schema = Joi.object({
         firstName: Joi.string().required().label('First name'),
         lastName: Joi.string().required().label('Last name'),
         email: Joi.string().email().required().label('Email'),
         phone: Joi.string().required().label('Phone'),
         role: Joi.string().required().label('Role/Position'),
-        hospitalName: Joi.string().required().label('Hospital name'),
-        hospitalId: Joi.string().required().label('Hospital id'),
+        institutionName: Joi.string().required().label('Institution name'),
+        institutionId: Joi.string().required().label('Institution id'),
         password: passwordComplexity().required().label('Password'),
     })
     return schema.validate(data)
@@ -65,4 +65,11 @@ exports.validateSystemAdminSignup = data =>{
         password: passwordComplexity().required().label('Password'),
     })
     return schema.validate(data)   
+}
+
+exports.validateEmail = data => {
+    const schema = Joi.object({
+        email: Joi.string().email().required().label("Email")
+    })
+    return schema.validate(data);
 }

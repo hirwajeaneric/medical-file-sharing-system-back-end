@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { testing, findAll, findById, upload, attachFile, add, update } = require('../controllers/hospital.controller');
+const { testing, findAll, findById, upload, attachFile, add, update } = require('../controllers/institution.controller');
 
 router.get('/test', testing);
 router.get('/list', findAll);

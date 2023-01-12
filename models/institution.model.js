@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
-const hospitalModel = new mongoose.Schema({
+const institutionModel = new mongoose.Schema({
     name: {type: String, required: true},
+    type: {type: String, required: true},
     location: {type: String, required: true},
     directorId: {type: String, required: true},
     directorName: {type: String, required: true},
@@ -9,8 +10,10 @@ const hospitalModel = new mongoose.Schema({
     joinDate: {type: String, required: true},
     logo: {type: String, required: true},
     isApproved: {type: String, required: true},
+    certificate: {type: String, required: true},
+    numberOfPersonnel: { type: String, required: true },
 });
 
-const Hospital = mongoose.model('hospital', hospitalModel);
+const Institution = mongoose.model('institution', institutionModel);
 
-module.exports = Hospital;
+module.exports = Institution;
