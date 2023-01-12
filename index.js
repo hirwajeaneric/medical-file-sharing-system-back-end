@@ -5,11 +5,11 @@ const cors = require('cors');
 const connection = require('./db');
 
 const adminRoutes = require('./routes/systemAdmin.routes');
-const applicationForHospitalRoutes = require('./routes/applicationForHospital.routes');
+const applicationForInstitutionRoutes = require('./routes/applicationForInstitution.routes');
 const fileRoutes = require('./routes/file.routes');
 const guardianRoutes = require('./routes/guardians.routes');
-const hospitalRoutes = require('./routes/hospital.routes');
-const hospitalPersonnelRoutes = require('./routes/hospitalPersonnel.routes');
+const institutionRoutes = require('./routes/institution.routes');
+const institutionPersonnelRoutes = require('./routes/institutionPersonnel.routes');
 const patientRoutes = require('./routes/patient.routes');
 
 connection();
@@ -20,11 +20,11 @@ app.use(cors());
 //Routes
 app.use('/api/mfss/uploads/', express.static('./uploads'));
 app.use('/api/mfss/admin/', adminRoutes);
-app.use('/api/mfss/applicationForHospital/', applicationForHospitalRoutes);
+app.use('/api/mfss/applicationForInstitution/', applicationForInstitutionRoutes);
 app.use('/api/mfss/file/', fileRoutes);
 app.use('/api/mfss/guardian/', guardianRoutes);
-app.use('/api/mfss/hospital/', hospitalRoutes);
-app.use('/api/mfss/hospitalPersonnel/', hospitalPersonnelRoutes);
+app.use('/api/mfss/institution/', institutionRoutes);
+app.use('/api/mfss/institutionPersonnel/', institutionPersonnelRoutes);
 app.use('/api/mfss/patient/', patientRoutes);
 
 const port = process.env.PORT || 5050;

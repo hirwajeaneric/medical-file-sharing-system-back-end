@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { testing, findById, add, update, findAll } = require('../controllers/applicationForHospital.controller');
+const { testing, findById, add, update, findAll } = require('../controllers/applicationForInstitution.controller');
 
 router.get('/test', testing);
 router.get('/list', findAll);

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
-const hospitalModel = new mongoose.Schema({
+const institutionModel = new mongoose.Schema({
     name: {type: String, required: true},
+    type: {type: String, required: true},
     location: {type: String, required: true},
     directorId: {type: String, required: true},
     directorName: {type: String, required: true},
@@ -11,6 +12,6 @@ const hospitalModel = new mongoose.Schema({
     isApproved: {type: String, required: true},
 });
 
-const Hospital = mongoose.model('hospital', hospitalModel);
+const Institution = mongoose.model('institution', institutionModel);
 
-module.exports = Hospital;
+module.exports = Institution;

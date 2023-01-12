@@ -1,4 +1,4 @@
-const hospitalModel = require('../models/hospital.model');
+const institutionModel = require('../models/institution.model');
 const fs = require('fs');
 const multer = require('multer');
 const moment = require('moment');
@@ -26,7 +26,7 @@ exports.attachFile = (req, res, next) => {
 }
 
 exports.add = (req, res, next) => {
-    hospitalModel.create(req.body)
+    institutionModel.create(req.body)
     .then(response => {
         res.status(201).send(response);
     })
@@ -36,7 +36,7 @@ exports.add = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-    hospitalModel.findByIdAndUpdate(req.query.id)
+    institutionModel.findByIdAndUpdate(req.query.id)
     .then(response => {
         res.status(201).send(response);
     })
@@ -46,7 +46,7 @@ exports.update = (req, res, next) => {
 }
 
 exports.findAll = (req, res, next) => {
-    hospitalModel.find() 
+    institutionModel.find() 
     .then(response => {
         res.status(201).send(response);
     })
@@ -56,7 +56,7 @@ exports.findAll = (req, res, next) => {
 }
 
 exports.findById = (req, res, next) => {
-    hospitalModel.findById(req.query.id) 
+    institutionModel.findById(req.query.id) 
     .then(response => {
         res.status(201).send(response);
     })
@@ -67,7 +67,7 @@ exports.findById = (req, res, next) => {
 
 exports.findByDirectorId = (req, res, next) => {
     const directorId = req.query.directorId;
-    hospitalModel.find({directorId}) 
+    institutionModel.find({directorId}) 
     .then(response => {
         res.status(201).send(response);
     })
