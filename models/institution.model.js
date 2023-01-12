@@ -10,6 +10,8 @@ const institutionModel = new mongoose.Schema({
     joinDate: {type: String, required: true},
     logo: {type: String, required: true},
     isApproved: {type: String, required: true},
+    certificate: {type: String, required: true},
+    numberOfPersonnel: { type: String, required: true },
 });
 
 const Institution = mongoose.model('institution', institutionModel);

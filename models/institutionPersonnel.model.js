@@ -9,7 +9,7 @@ const institutionPersonnelModel = new mongoose.Schema({
     phone: { type: String, required: true },
     role: { type: String, required: true },
     isActive: { type: String, required: true },
-    joinDate: { type: String, required: true },
+    joinDate: { type: String, required: false },
     applicationDate: { type: String, required: true },
     institutionId: { type: String, required: true },
     institutionName: { type: String, required: true },

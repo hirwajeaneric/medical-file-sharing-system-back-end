@@ -7,10 +7,12 @@ const applicationForInstitutionModel = new mongoose.Schema({
     institutionName: {type: String, required: true},
     sendDate: {type: String, required: true},
     status: {type: String, required: true},
-    tinNumber: {type: String, required: true},
-    respondDate: {type: String, required: true},
+    respondDate: {type: String, required: false},
     applicationBody: {type: String, required: true},
     systemAdminId: {type: String, required: true},
+    location: {type: String, required: true},
+    certificate: {type: String, required: true},
+    numberOfPersonnel: { type: String, required: true },
 });
 
 const applicationForInstitution = mongoose.model('applicationForInstitution', applicationForInstitutionModel);
