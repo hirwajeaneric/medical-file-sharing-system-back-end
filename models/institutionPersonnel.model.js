@@ -5,14 +5,14 @@ const institutionPersonnelModel = new mongoose.Schema({
     lastName: { type: String, required: true },
     userCode: { type: String, required: true },
     email: { type: String, required: false },
-    password: { type: String, required: true },
+    password: { type: String, required: false },
     phone: { type: String, required: true },
     role: { type: String, required: true },
     isActive: { type: String, required: true },
     joinDate: { type: String, required: false },
-    applicationDate: { type: String, required: true },
-    institutionId: { type: String, required: true },
-    institutionName: { type: String, required: true },
+    applicationDate: { type: String, required: false },
+    institutionId: { type: String, required: false },
+    institutionName: { type: String, required: false },
 });
 
 institutionPersonnelModel.methods.generateAuthToken = function () {

@@ -9,6 +9,27 @@ exports.testing = (req, res, next) => {
     res.send('Admin Router works well!');
 }
 
+exports.createNew = async (req, res, next) => {
+    try {
+        const emailAlreadyRegistered = await institutionPersonnelModel.findOne({ email: req.body.email});
+        if (emailAlreadyRegistered) {
+            return res.status(409).send({ 
+                message: "This email address is already registered"
+            })
+        }
+
+        await institutionPersonnelModel.create(req.body)
+        .then(response => {
+            res.status(201).send({message: 'User information saved', info: response});
+        })
+        
+    } catch (error) {
+        res.status(500).send({
+            message: "Internal Server Error: "+error+"."
+        })
+    }
+}
+
 exports.signin = async (req, res, next) => {
     try {
         const {error} = validateInstitutionPersonnelSignin(req.body);
