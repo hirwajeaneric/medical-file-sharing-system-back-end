@@ -120,7 +120,7 @@ exports.update = (req, res, next) => {
 exports.findAll = (req, res, next) => {
     institutionPersonnelModel.find() 
     .then(response => {
-        res.status(201).send(response);
+        res.status(200).send(response);
     })
     .catch(err => {
         res.status(500).send(`Server error ${err}`)
@@ -130,7 +130,7 @@ exports.findAll = (req, res, next) => {
 exports.findById = (req, res, next) => {
     institutionPersonnelModel.findById(req.query.id) 
     .then(response => {
-        res.status(201).send(response);
+        res.status(200).send(response);
     })
     .catch(err => {
         res.status(500).send(`Server error ${err}`)
@@ -141,7 +141,7 @@ exports.findByEmail = (req, res, next) => {
     const email = req.query.email;
     institutionPersonnelModel.find({email}) 
     .then(response => {
-        res.status(201).send(response);
+        res.status(200).send(response);
     })
     .catch(err => {
         res.status(500).send(`Server error ${err}`)
@@ -152,7 +152,7 @@ exports.findByRole = (req, res, next) => {
     const role = req.query.role;
     institutionPersonnelModel.find({role}) 
     .then(response => {
-        res.status(201).send(response);
+        res.status(200).send(response);
     })
     .catch(err => {
         res.status(500).send(`Server error ${err}`)
@@ -163,7 +163,7 @@ exports.findByInstitutionId = (req, res, next) => {
     const institutionId = req.query.institutionId;
     institutionPersonnelModel.find({institutionId}) 
     .then(response => {
-        res.status(201).send(response);
+        res.status(200).send(response);
     })
     .catch(err => {
         res.status(500).send(`Server error ${err}`)
@@ -174,7 +174,7 @@ exports.findByInstitutionName = (req, res, next) => {
     const institutionName = req.query.institutionName;
     institutionPersonnelModel.find({institutionName}) 
     .then(response => {
-        res.status(201).send(response);
+        res.status(200).send(response);
     })
     .catch(err => {
         res.status(500).send(`Server error ${err}`)
