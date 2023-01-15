@@ -36,10 +36,20 @@ exports.findAll = (req, res, next) => {
 
 exports.findById = (req, res, next) => {
     guardianModel.findById(req.query.id)
-        .then(response => {
-            res.status(200).send(response);
-        })
-        .catch(err => {
-            res.status(500).send(`Server error ${err}`)
-        })
+    .then(response => {
+        res.status(200).send(response);
+    })
+    .catch(err => {
+        res.status(500).send(`Server error ${err}`)
+    })
+}
+
+exports.findByPatientId = (req, res, next) => {
+    guardianModel.findOne({patientId: req.query.patientId})
+    .then(response => {
+        res.status(200).send(response);
+    })
+    .catch(err => {
+        res.status(500).send(`Server error ${err}`)
+    })
 }

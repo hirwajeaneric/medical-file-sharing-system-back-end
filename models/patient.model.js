@@ -12,7 +12,6 @@ const patientModel = new mongoose.Schema({
     maritalStatus: {type: String, required: true},
     gender: {type: String, required: true},
     joinDate: {type: String, required: true},
-    guardians: {type: String, required: true},
 });
 
 patientModel.methods.generateAuthToken = function(){
