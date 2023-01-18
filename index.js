@@ -11,6 +11,7 @@ const guardianRoutes = require('./routes/guardians.routes');
 const institutionRoutes = require('./routes/institution.routes');
 const institutionPersonnelRoutes = require('./routes/institutionPersonnel.routes');
 const patientRoutes = require('./routes/patient.routes');
+const recordRoutes = require('./routes/record.routes');
 
 connection();
 
@@ -26,6 +27,7 @@ app.use('/api/mfss/guardian/', guardianRoutes);
 app.use('/api/mfss/institution/', institutionRoutes);
 app.use('/api/mfss/institutionPersonnel/', institutionPersonnelRoutes);
 app.use('/api/mfss/patient/', patientRoutes);
+app.use('/api/mfss/record/', recordRoutes);
 
 const port = process.env.PORT || 5050;
 app.listen(port, ()=> console.log(`Listening on port ${port}...`));

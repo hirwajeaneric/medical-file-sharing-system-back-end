@@ -10,11 +10,16 @@ exports.testing = (req, res, next) => {
 exports.add = (req, res, next) => {
     applicationForInstitutionModel.create(req.body)
     .then(response => {
-        res.status(201).send(response);
+        res.status(201).send({ message: 'Application submitted!', info: response});
     })
     .catch(err => {
         res.status(500).send(`Server error ${err}`)
     })
+}
+
+exports.attachCertificate = (req, res, next) => {
+    req.body.certificate = req.file.filename;
+    next();
 }
 
 exports.update = (req, res, next) => {

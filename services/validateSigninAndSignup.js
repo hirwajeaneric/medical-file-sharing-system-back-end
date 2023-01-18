@@ -38,11 +38,11 @@ exports.validatePatientSignup = data =>{
         email: Joi.string().email().required().label('Email'),
         phone: Joi.string().required().label('Phone number'),
         residence: Joi.string().required().label('Residence'),
+        joinDate: Joi.string().required().label('Join Date'),
         placeOfBirth: Joi.string().required().label('Place of birth'),
         dateOfBirth: Joi.string().required().label('Date of birth'),
         maritalStatus: Joi.string().required().label('Marital status'),
         gender: Joi.string().required().label('Gender'),
-        guardians: Joi.string().required().label('Guardians'),
         password: passwordComplexity().required().label('Password'),
     })
     return schema.validate(data)

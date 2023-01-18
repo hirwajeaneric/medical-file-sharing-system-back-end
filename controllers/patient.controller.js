@@ -1,8 +1,10 @@
 const patientModel =  require('../models/patient.model');
+const patientTokenModel = require('../models/patientToken.model');
 const fs = require('fs');
 const multer = require('multer');
 const moment = require('moment');
 const { validatePatientSignin, validatePatientSignup} = require('../services/validateSigninAndSignup');
+const bcrypt = require('bcrypt');
 
 exports.testing = (req, res, next) => {
     res.send('Admin Router works well!');
@@ -31,10 +33,14 @@ exports.signin = async (req, res, next) => {
             })
         }
 
-        const token = patient.generateAuthToken();
+        // const token = patient.generateAuthToken();
+        const userToken = await patientTokenModel.findOne({userId: patient._id});
         res.status(200).send({
-            token: token,
-            user: patient
+            token: userToken.token,
+            id: patient._id,
+            firstName: patient.firstName,
+            lastName: patient.lastName,
+            email: patient.email,
         })
     } catch(error){
         res.status(500).send({
@@ -62,12 +68,19 @@ exports.signup = async (req, res, next) => {
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-        await new patientModel({ 
+        const savedPatient = await new patientModel({ 
             ...req.body, password: hashedPassword
+        }).save();
+
+        const patientInfo = await patientModel.findOne({email: savedPatient.email});
+        const savedToken = await new patientTokenModel({
+            userId: patientInfo._id,
+            token: patientInfo.generateAuthToken()
         }).save();
         
         res.status(201).send({
-            message: "Account created."
+            message: "Account created.",
+            patient: savedPatient
         })
         
     } catch (error) {

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
 
 const patientModel = new mongoose.Schema({
     firstName: {type: String, required: true},
@@ -7,12 +8,11 @@ const patientModel = new mongoose.Schema({
     phone: {type: String, required: false},
     password: {type: String, required: true},
     residence: {type: String, required: true},
-    placeOfBirth: {type: String, required: true},
+    placeOfBirth: {type: String, required: false},
     dateOfBirth: {type: String, required: true},
     maritalStatus: {type: String, required: true},
     gender: {type: String, required: true},
     joinDate: {type: String, required: true},
-    guardians: {type: String, required: true},
 });
 
 patientModel.methods.generateAuthToken = function(){

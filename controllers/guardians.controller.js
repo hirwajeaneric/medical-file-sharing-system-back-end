@@ -1,7 +1,7 @@
 const guardianModel = require('../models/guardians.models');
 
 exports.testing = (req, res, next) => {
-    res.send('Admin Router works well!');
+    res.send('Guardian Router works well!');
 }
 
 exports.add = (req, res, next) => {
@@ -36,10 +36,20 @@ exports.findAll = (req, res, next) => {
 
 exports.findById = (req, res, next) => {
     guardianModel.findById(req.query.id)
-        .then(response => {
-            res.status(200).send(response);
-        })
-        .catch(err => {
-            res.status(500).send(`Server error ${err}`)
-        })
+    .then(response => {
+        res.status(200).send(response);
+    })
+    .catch(err => {
+        res.status(500).send(`Server error ${err}`)
+    })
+}
+
+exports.findByPatientId = (req, res, next) => {
+    guardianModel.findOne({patientId: req.query.patientId})
+    .then(response => {
+        res.status(200).send(response);
+    })
+    .catch(err => {
+        res.status(500).send(`Server error ${err}`)
+    })
 }
