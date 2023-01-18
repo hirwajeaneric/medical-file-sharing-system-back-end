@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
 
 const institutionPersonnelModel = new mongoose.Schema({
     firstName: { type: String, required: true },
