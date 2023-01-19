@@ -67,6 +67,7 @@ exports.signin = async (req, res, next) => {
 
 exports.signup = async (req, res, next) => {
     try {
+        console.log(req.body);
         const {error} = validateInstitutionPersonnelSignup(req.body);
         if (error) {
             return res.status(400).send({

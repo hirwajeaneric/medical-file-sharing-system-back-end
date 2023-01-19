@@ -23,9 +23,9 @@ exports.attachCertificate = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-    applicationForInstitutionModel.findByIdAndUpdate(req.query.id)
+    applicationForInstitutionModel.findByIdAndUpdate(req.query.id, req.body)
     .then(response => {
-        res.status(201).send(response);
+        res.status(201).send({ message: 'Application Updated', payload: response});
     })
     .catch(err => {
         res.status(500).send(`Server error ${err}`)
