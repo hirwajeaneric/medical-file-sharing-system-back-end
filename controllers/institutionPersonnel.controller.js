@@ -1,8 +1,9 @@
-const institutionPersonnelModel = require('../models/institutionPersonnel.model');
 const fs = require('fs');
 const multer = require('multer');
 const moment = require('moment');
 const bcrypt = require('bcrypt');
+const institutionPersonnelModel = require('../models/institutionPersonnel.model');
+const institutionPersonnelTokenModel = require('../models/insitutionPersonnelToken.model');
 const { validateInstitutionPersonnelSignin, validateInstitutionPersonnelSignup} = require('../services/validateSigninAndSignup');
 
 exports.testing = (req, res, next) => {
@@ -56,7 +57,15 @@ exports.signin = async (req, res, next) => {
         const token = institutionPersonnel.generateAuthToken();
         res.status(200).send({
             token: token,
-            user: institutionPersonnel
+            id: institutionPersonnel._id,
+            firstName: institutionPersonnel.firstName,
+            lastName: institutionPersonnel.lastName,
+            email: institutionPersonnel.email,
+            role: institutionPersonnel.role,
+            userCode: institutionPersonnel.userCode,
+            isActive: institutionPersonnel.isActive,
+            institutionId: institutionPersonnel.institutionId,
+            institutionName: institutionPersonnel.institutionName 
         })
     } catch(error){
         res.status(500).send({
@@ -67,7 +76,6 @@ exports.signin = async (req, res, next) => {
 
 exports.signup = async (req, res, next) => {
     try {
-        console.log(req.body);
         const {error} = validateInstitutionPersonnelSignup(req.body);
         if (error) {
             return res.status(400).send({
@@ -85,10 +93,16 @@ exports.signup = async (req, res, next) => {
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-        await new institutionPersonnelModel({ 
+        const savedUser = await new institutionPersonnelModel({ 
             ...req.body, password: hashedPassword
         }).save();
         
+        const userInfo = await institutionPersonnelModel.findOne({ email: savedUser.email });
+        await new institutionPersonnelTokenModel({
+            userId: userInfo._id,
+            token: userInfo.generateAuthToken()
+        }).save();
+
         res.status(201).send({
             message: "Account registered. Your account is being verified. You will be notified via email once your account is activated."
         })
@@ -139,8 +153,17 @@ exports.findById = (req, res, next) => {
 }
 
 exports.findByEmail = (req, res, next) => {
-    const email = req.query.email;
-    institutionPersonnelModel.find({email}) 
+    institutionPersonnelModel.find({email: req.query.email}) 
+    .then(response => {
+        res.status(200).send(response);
+    })
+    .catch(err => {
+        res.status(500).send(`Server error ${err}`)
+    })
+}
+
+exports.findByInstitutionCode = (req, res, next) => {
+    institutionPersonnelModel.find({institutionCode: req.query.institutionCode}) 
     .then(response => {
         res.status(200).send(response);
     })
@@ -150,8 +173,7 @@ exports.findByEmail = (req, res, next) => {
 }
 
 exports.findByRole = (req, res, next) => {
-    const role = req.query.role;
-    institutionPersonnelModel.find({role}) 
+    institutionPersonnelModel.find({role: req.query.role}) 
     .then(response => {
         res.status(200).send(response);
     })
@@ -161,8 +183,7 @@ exports.findByRole = (req, res, next) => {
 }
 
 exports.findByInstitutionId = (req, res, next) => {
-    const institutionId = req.query.institutionId;
-    institutionPersonnelModel.find({institutionId}) 
+    institutionPersonnelModel.find({institutionId : req.query.institutionId}) 
     .then(response => {
         res.status(200).send(response);
     })
@@ -172,8 +193,7 @@ exports.findByInstitutionId = (req, res, next) => {
 }
 
 exports.findByInstitutionName = (req, res, next) => {
-    const institutionName = req.query.institutionName;
-    institutionPersonnelModel.find({institutionName}) 
+    institutionPersonnelModel.find({institutionName : req.query.institutionName}) 
     .then(response => {
         res.status(200).send(response);
     })

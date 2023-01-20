@@ -36,7 +36,7 @@ exports.add = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-    institutionModel.findByIdAndUpdate(req.query.id)
+    institutionModel.findByIdAndUpdate(req.query.id, req.body)
     .then(response => {
         res.status(201).send(response);
     })
@@ -66,8 +66,17 @@ exports.findById = (req, res, next) => {
 }
 
 exports.findByDirectorId = (req, res, next) => {
-    const directorId = req.query.directorId;
-    institutionModel.find({directorId}) 
+    institutionModel.find({ directorId : req.query.directorId}) 
+    .then(response => {
+        res.status(201).send(response);
+    })
+    .catch(err => {
+        res.status(500).send(`Server error ${err}`)
+    })
+}
+
+exports.findByCertificate = (req, res, next) => {
+    institutionModel.find({ certificate: req.query.certificate }) 
     .then(response => {
         res.status(201).send(response);
     })
