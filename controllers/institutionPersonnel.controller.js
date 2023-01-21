@@ -104,7 +104,8 @@ exports.signup = async (req, res, next) => {
         }).save();
 
         res.status(201).send({
-            message: "Account registered. Your account is being verified. You will be notified via email once your account is activated."
+            message: "Account registered. Your account is being verified. You will be notified via email once your account is activated.",
+            info:  userInfo
         })
         
     } catch (error) {

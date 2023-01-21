@@ -35,6 +35,16 @@ exports.add = (req, res, next) => {
     })
 }
 
+exports.approve = (req, res, next) => {
+    institutionModel.create(req.body)
+    .then(response => {
+        res.status(201).send(response);
+    })
+    .catch(err => {
+        res.status(500).send(`Server error ${err}`)
+    })
+}
+
 exports.update = (req, res, next) => {
     institutionModel.findByIdAndUpdate(req.query.id, req.body)
     .then(response => {
