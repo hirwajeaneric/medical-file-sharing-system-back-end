@@ -6,12 +6,13 @@ const institutionModel = new mongoose.Schema({
     location: {type: String, required: true},
     directorId: {type: String, required: true},
     directorName: {type: String, required: true},
-    specialization: {type: String, required: true},
+    specialization: {type: String, required: false},
     joinDate: {type: String, required: true},
-    logo: {type: String, required: true},
+    logo: {type: String, required: false},
     isApproved: {type: String, required: true},
     certificate: {type: String, required: true},
     numberOfPersonnel: { type: String, required: true },
+    institutionCode: { type: String, required: false }
 });
 
 const Institution = mongoose.model('institution', institutionModel);

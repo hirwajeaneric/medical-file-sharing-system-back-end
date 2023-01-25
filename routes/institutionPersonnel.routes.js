@@ -14,6 +14,6 @@ router.post('/signup', signup);
 router.post('/forgotPassword', forgotPassword);
 router.post('/resetPassord', resetPassword);
 router.post('/createUser', createNew);
-router.put('/update', update);
+router.put('/updateInstitution', update);
 
 module.exports = router;

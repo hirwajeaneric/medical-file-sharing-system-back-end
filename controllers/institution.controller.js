@@ -85,6 +85,26 @@ exports.findByDirectorId = (req, res, next) => {
     })
 }
 
+exports.findByName = (req, res, next) => {
+    institutionModel.findOne({ name : req.query.name}) 
+    .then(response => {
+        res.status(201).send(response);
+    })
+    .catch(err => {
+        res.status(500).send(`Server error ${err}`)
+    })
+}
+
+exports.findByCode = (req, res, next) => {
+    institutionModel.findOne({ institutionCode : req.query.institutionCode}) 
+    .then(response => {
+        res.status(201).send(response);
+    })
+    .catch(err => {
+        res.status(500).send(`Server error ${err}`)
+    })
+}
+
 exports.findByCertificate = (req, res, next) => {
     institutionModel.find({ certificate: req.query.certificate }) 
     .then(response => {

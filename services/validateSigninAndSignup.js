@@ -5,6 +5,7 @@ exports.validateInstitutionPersonnelSignin = data =>{
     const schema = Joi.object({
         userCode: Joi.string().required().label('User code'),
         password: Joi.string().required().label('Password'),
+        institutionCode: Joi.string().required().label('Institution Code'),
     })
     return schema.validate(data)
 }

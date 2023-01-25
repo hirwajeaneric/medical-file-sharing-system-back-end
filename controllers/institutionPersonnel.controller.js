@@ -2,6 +2,7 @@ const fs = require('fs');
 const multer = require('multer');
 const moment = require('moment');
 const bcrypt = require('bcrypt');
+const institutionModel = require('../models/institution.model');
 const institutionPersonnelModel = require('../models/institutionPersonnel.model');
 const institutionPersonnelTokenModel = require('../models/insitutionPersonnelToken.model');
 const { validateInstitutionPersonnelSignin, validateInstitutionPersonnelSignup} = require('../services/validateSigninAndSignup');
@@ -54,19 +55,35 @@ exports.signin = async (req, res, next) => {
             })
         }
 
-        const token = institutionPersonnel.generateAuthToken();
-        res.status(200).send({
-            token: token,
-            id: institutionPersonnel._id,
-            firstName: institutionPersonnel.firstName,
-            lastName: institutionPersonnel.lastName,
-            email: institutionPersonnel.email,
-            role: institutionPersonnel.role,
-            userCode: institutionPersonnel.userCode,
-            isActive: institutionPersonnel.isActive,
-            institutionId: institutionPersonnel.institutionId,
-            institutionName: institutionPersonnel.institutionName 
-        })
+        const institution = await institutionModel.findById(institutionPersonnel.institutionId);
+
+        if (req.body.institutionCode !== institutionPersonnel.institutionCode) {
+            return res.status(401).send({message: 'User not recognized for this institution.'});
+        } else {
+            if (institution.isApproved === 'suspended') {
+                return res.status(401).send({message: 'Sorry, Institution access to the MEDICASE is temporarily suspended.'});
+            } else if (institution.isApproved === "false") {
+                return res.status(401).send({message: 'Institution does not have access to the MEDICASE.'});
+            } else {
+                if (institutionPersonnel.isActive === "false") {
+                    return res.status(401).send({message: 'User account suspended.'});
+                } else {
+                    const token = institutionPersonnel.generateAuthToken();
+                    return res.status(200).send({
+                        token: token,
+                        id: institutionPersonnel._id,
+                        firstName: institutionPersonnel.firstName,
+                        lastName: institutionPersonnel.lastName,
+                        email: institutionPersonnel.email,
+                        role: institutionPersonnel.role,
+                        userCode: institutionPersonnel.userCode,
+                        isActive: institutionPersonnel.isActive,
+                        institutionId: institutionPersonnel.institutionId,
+                        institutionName: institutionPersonnel.institutionName 
+                    })   
+                }
+            }
+        }
     } catch(error){
         res.status(500).send({
             message: "Internal Server Error: "+error+"."
@@ -124,7 +141,8 @@ exports.resetPassword = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-    institutionPersonnelModel.findByIdAndUpdate(req.query.id)
+
+    institutionPersonnelModel.findByIdAndUpdate(req.query.id, req.body)
     .then(response => {
         res.status(201).send(response);
     })
