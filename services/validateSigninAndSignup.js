@@ -19,9 +19,9 @@ exports.validateInstitutionPersonnelSignup = data =>{
         phone: Joi.string().required().label('Phone'),
         role: Joi.string().required().label('Role/Position'),
         isActive: Joi.string().required().label('Is Active'),
-        applicationDate: Joi.string().required().label('Application Date'),
         institutionName: Joi.string().required().label('Institution name'),
         institutionId: Joi.string().required().label('Institution id'),
+        institutionCode: Joi.string().required().label('Institution code'),
         password: passwordComplexity().required().label('Password'),
     })
     return schema.validate(data)
