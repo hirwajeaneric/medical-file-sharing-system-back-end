@@ -5,6 +5,7 @@ exports.validateInstitutionPersonnelSignin = data =>{
     const schema = Joi.object({
         userCode: Joi.string().required().label('User code'),
         password: Joi.string().required().label('Password'),
+        institutionCode: Joi.string().required().label('Institution Code'),
     })
     return schema.validate(data)
 }
@@ -14,10 +15,13 @@ exports.validateInstitutionPersonnelSignup = data =>{
         firstName: Joi.string().required().label('First name'),
         lastName: Joi.string().required().label('Last name'),
         email: Joi.string().email().required().label('Email'),
+        userCode: Joi.string().required().label('User code'),
         phone: Joi.string().required().label('Phone'),
         role: Joi.string().required().label('Role/Position'),
+        isActive: Joi.string().required().label('Is Active'),
         institutionName: Joi.string().required().label('Institution name'),
         institutionId: Joi.string().required().label('Institution id'),
+        institutionCode: Joi.string().required().label('Institution code'),
         password: passwordComplexity().required().label('Password'),
     })
     return schema.validate(data)

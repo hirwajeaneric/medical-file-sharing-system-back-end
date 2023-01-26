@@ -14,6 +14,7 @@ const institutionPersonnelModel = new mongoose.Schema({
     applicationDate: { type: String, required: false },
     institutionId: { type: String, required: false },
     institutionName: { type: String, required: false },
+    institutionCode: { type: String, required: false }
 });
 
 institutionPersonnelModel.methods.generateAuthToken = function () {

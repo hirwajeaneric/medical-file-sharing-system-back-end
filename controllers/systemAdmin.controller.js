@@ -78,7 +78,7 @@ exports.signup = async (req, res, next) => {
 
         // Saving a user's token in the database
         const userInfo = await systemAdminModel.findOne({email: savedUser.email});
-        const savedToken = await new adminTokenModel({
+        await new adminTokenModel({
             userId: userInfo._id,
             token: userInfo.generateAuthToken()
         }).save();
