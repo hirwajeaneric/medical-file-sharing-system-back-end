@@ -7,13 +7,12 @@ const recordSchema = new mongoose.Schema({
     email: { type: String, required: true },
     hospitalName: { type: String, required: true },
     hospitalId: { type: String, required: true },
-    doctors: { type: Array, required: true },
     recordOpener: { type: String, required: true },
-    files: { type: Array, required: true },
+    recordCloser: { type: String, required: false },
     openTime: { type: String, required: true },
-    closeTime: { type: String, required: true },
+    closeTime: { type: String, required: false },
     status: { type: String, required: true },
-    insuranceName: { type: String, required: true },
+    insuranceName: { type: String, required: false },
 });
 
 module.exports = mongoose.model('record', recordSchema);

@@ -61,25 +61,13 @@ exports.createNew = async (req, res, next) => {
 exports.signin = async (req, res, next) => {
     try {
         const {error} = validateInstitutionPersonnelSignin(req.body);
-        if (error) {
-            return res.status(400).send({
-                message: error.details[0].message
-            })
-        } 
+        if (error) { return res.status(400).send({ message: error.details[0].message })} 
         
         const institutionPersonnel = await institutionPersonnelModel.findOne({userCode: req.body.userCode});
-        if (!institutionPersonnel) {
-            return res.status(401).send({ 
-                message: "Invalid credentials"
-            })
-        }
+        if (!institutionPersonnel) { return res.status(401).send({ message: "Invalid credentials" })}
 
         const validPassword = await bcrypt.compare(req.body.password, institutionPersonnel.password);
-        if (!validPassword) {
-            return res.status(401).send({
-                message: "Invalid credentials - Wrong password"
-            })
-        }
+        if (!validPassword) { return res.status(401).send({ message: "Invalid credentials" })}
 
         const institution = await institutionModel.findById(institutionPersonnel.institutionId);
 
@@ -110,28 +98,16 @@ exports.signin = async (req, res, next) => {
                 }
             }
         }
-    } catch(error){
-        res.status(500).send({
-            message: "Internal Server Error: "+error+"."
-        })
-    }
+    } catch(error){ res.status(500).send({ message: "Internal Server Error: "+error+"." }) }
 }
 
 exports.signup = async (req, res, next) => {
     try {
         const {error} = validateInstitutionPersonnelSignup(req.body);
-        if (error) {
-            return res.status(400).send({
-                message: error.details[0].message
-            })
-        }
+        if (error) { return res.status(400).send({ message: error.details[0].message }) }
 
         const emailAlreadyRegistered = await institutionPersonnelModel.findOne({ email: req.body.email});
-        if (emailAlreadyRegistered) {
-            return res.status(409).send({ 
-                message: "This email address is already registered"
-            })
-        }
+        if (emailAlreadyRegistered) { return res.status(409).send({  message: "This email address is already registered" }) }
 
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -141,21 +117,13 @@ exports.signup = async (req, res, next) => {
         }).save();
         
         const userInfo = await institutionPersonnelModel.findOne({ email: savedUser.email });
-        await new institutionPersonnelTokenModel({
-            userId: userInfo._id,
-            token: userInfo.generateAuthToken()
-        }).save();
+        await new institutionPersonnelTokenModel({ userId: userInfo._id, token: userInfo.generateAuthToken() }).save();
 
         res.status(201).send({
             message: "Account registered. Your account is being verified. You will be notified via email once your account is activated.",
             info:  userInfo
         })
-        
-    } catch (error) {
-        res.status(500).send({
-            message: "Internal Server Error: "+error+"."
-        })
-    }
+    } catch (error) { res.status(500).send({ message: "Internal Server Error: "+error+"."}) }
 }
 
 exports.forgotPassword = (req, res, next) => {
@@ -168,90 +136,54 @@ exports.resetPassword = (req, res, next) => {
 
 exports.update = (req, res, next) => {
     institutionPersonnelModel.findByIdAndUpdate(req.query.id, req.body)
-    .then(response => {
-        res.status(201).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(201).send(response); })
+    .catch(err => { res.status(500).send(`Server error ${err}`) })
 }
 
 exports.findAll = (req, res, next) => {
     institutionPersonnelModel.find() 
-    .then(response => {
-        res.status(200).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(200).send(response); })
+    .catch(err => { res.status(500).send(`Server error ${err}`)})
 }
 
 exports.findById = (req, res, next) => {
     institutionPersonnelModel.findById(req.query.id) 
-    .then(response => {
-        res.status(200).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(200).send(response); })
+    .catch(err => { res.status(500).send(`Server error ${err}`) })
 }
 
 exports.findByEmail = (req, res, next) => {
     institutionPersonnelModel.find({email: req.query.email}) 
-    .then(response => {
-        res.status(200).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(200).send(response); })
+    .catch(err => { res.status(500).send(`Server error ${err}`) })
 }
 
 exports.findByInstitutionCode = (req, res, next) => {
     institutionPersonnelModel.find({institutionCode: req.query.institutionCode}) 
-    .then(response => {
-        res.status(200).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(200).send(response); })
+    .catch(err => { res.status(500).send(`Server error ${err}`)})
 }
 
 exports.findByRole = (req, res, next) => {
     institutionPersonnelModel.find({role: req.query.role}) 
-    .then(response => {
-        res.status(200).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(200).send(response); })
+    .catch(err => { res.status(500).send(`Server error ${err}`) })
 }
 
 exports.findByInstitutionId = (req, res, next) => {
     institutionPersonnelModel.find({institutionId : req.query.institutionId}) 
-    .then(response => {
-        res.status(200).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(200).send(response); })
+    .catch(err => { res.status(500).send(`Server error ${err}`) })
 }
 
 exports.findByInstitutionName = (req, res, next) => {
     institutionPersonnelModel.find({institutionName : req.query.institutionName}) 
-    .then(response => {
-        res.status(200).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(200).send(response); })
+    .catch(err => { res.status(500).send(`Server error ${err}`) })
 }
 
 exports.deleteAccount = (req, res, next) => {
     institutionPersonnelModel.findByIdAndDelete(req.query.id)
-    .then(response => {
-        res.status(201).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(201).send(response); })
+    .catch(err => { res.status(500).send(`Server error ${err}`) })
 }
