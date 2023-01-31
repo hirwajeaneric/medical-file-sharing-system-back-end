@@ -11,6 +11,7 @@ router.get('/findByHospitalId', findByHospitalId);
 router.get('/findByType', findByType);
 router.get('/findByDoctorId', findByDoctorId);
 router.get('/findByCreationDate', findByCreationDate);
+router.post('/new', add);
 router.post('/add', upload.single('fileAttachment'), attachFile, add);
 router.put('/update', upload.single('fileAttachment'), attachFile, update);
 

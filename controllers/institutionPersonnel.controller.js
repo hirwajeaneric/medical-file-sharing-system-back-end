@@ -11,19 +11,13 @@ exports.testing = (req, res, next) => { res.send('Admin Router works well!'); }
 
 exports.addNew = async (req, res, next) => {
     try {
-
-        console.log(req.body);
-
         const {error} = validateInstitutionPersonnelSignup(req.body);
-        
         if (error) { return res.status(400).send({ message: error.details[0].message }) }
 
         const emailAlreadyRegistered = await institutionPersonnelModel.findOne({ email: req.body.email});
-        
         if (emailAlreadyRegistered) { return res.status(409).send({ message: "This email address is already registered" }) }
 
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
-
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
         const recordedPersonnel = await institutionPersonnelModel.create({...req.body, password: hashedPassword, joinDate: new Date().toDateString()})
@@ -40,20 +34,17 @@ exports.addNew = async (req, res, next) => {
 exports.createNew = async (req, res, next) => {
     try {
         const emailAlreadyRegistered = await institutionPersonnelModel.findOne({ email: req.body.email});
-        
         if (emailAlreadyRegistered) { return res.status(409).send({ message: "This email address is already registered" }) }
 
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
-
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
         const recordedPersonnel = await institutionPersonnelModel.create({...req.body, password: hashedPassword})
-
         const userInfo = await institutionPersonnelModel.findOne({email: recordedPersonnel.email});
 
         await new institutionPersonnelTokenModel({ userId: userInfo._id, token: userInfo.generateAuthToken() }).save();
 
-        res.status(201).send({ message: "User information saved" })
+        res.status(201).send({ message: "User information saved", info: userInfo })
 
     } catch (error) { res.status(500).send({ message: "Internal Server Error: "+error+"." }) }
 }
@@ -153,7 +144,7 @@ exports.findById = (req, res, next) => {
 }
 
 exports.findByEmail = (req, res, next) => {
-    institutionPersonnelModel.find({email: req.query.email}) 
+    institutionPersonnelModel.findOne({email: req.query.email}) 
     .then(response => { res.status(200).send(response); })
     .catch(err => { res.status(500).send(`Server error ${err}`) })
 }

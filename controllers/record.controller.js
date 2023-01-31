@@ -9,7 +9,7 @@ exports.add = (req, res, next) => {
 }
 
 exports.update = (req, res, next) => {
-    recordModel.findByIdAndUpdate(req.query.id)
+    recordModel.findByIdAndUpdate(req.query.id, req.body)
     .then(response => { res.status(201).send({message: 'Record closed', record: response}); })
     .catch(err => { res.status(500).send(`Server error ${err}`) })
 }

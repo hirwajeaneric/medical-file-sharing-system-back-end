@@ -12,7 +12,8 @@ const institutionModel = new mongoose.Schema({
     isApproved: {type: String, required: true},
     certificate: {type: String, required: true},
     numberOfPersonnel: { type: String, required: true },
-    institutionCode: { type: String, required: false }
+    institutionCode: { type: String, required: false },
+    postalCode: { type: String, required: false }
 });
 
 const Institution = mongoose.model('institution', institutionModel);
