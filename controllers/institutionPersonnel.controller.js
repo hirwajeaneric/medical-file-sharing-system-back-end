@@ -21,7 +21,6 @@ exports.addNew = async (req, res, next) => {
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
         const recordedPersonnel = await institutionPersonnelModel.create({...req.body, password: hashedPassword, joinDate: new Date().toDateString()})
-
         const userInfo = await institutionPersonnelModel.findOne({email: recordedPersonnel.email});
         
         await new institutionPersonnelTokenModel({ userId: userInfo._id, token: userInfo.generateAuthToken() }).save();
@@ -74,18 +73,23 @@ exports.signin = async (req, res, next) => {
                     return res.status(401).send({message: 'User account suspended.'});
                 } else {
                     const token = institutionPersonnel.generateAuthToken();
-                    return res.status(200).send({
-                        token: token,
-                        id: institutionPersonnel._id,
-                        firstName: institutionPersonnel.firstName,
-                        lastName: institutionPersonnel.lastName,
-                        email: institutionPersonnel.email,
-                        role: institutionPersonnel.role,
-                        userCode: institutionPersonnel.userCode,
-                        isActive: institutionPersonnel.isActive,
-                        institutionId: institutionPersonnel.institutionId,
-                        institutionName: institutionPersonnel.institutionName 
-                    })   
+                    if (token) {
+                        return res.status(200).send({
+                            token: token,
+                            id: institutionPersonnel._id,
+                            firstName: institutionPersonnel.firstName,
+                            lastName: institutionPersonnel.lastName,
+                            email: institutionPersonnel.email,
+                            role: institutionPersonnel.role,
+                            userCode: institutionPersonnel.userCode,
+                            isActive: institutionPersonnel.isActive,
+                            institutionType: institution.type,
+                            institutionId: institutionPersonnel.institutionId,
+                            institutionName: institutionPersonnel.institutionName, 
+                        })   
+                    } else {
+                        return res.status(200).send({ message: 'Access denied, please contract your institution system admin for support.' })
+                    }   
                 }
             }
         }

@@ -18,16 +18,21 @@ exports.signin = async (req, res, next) => {
 
         const validPassword = await bcrypt.compare(req.body.password, patient.password);
         if (!validPassword) { return res.status(401).send({ message: "Invalid email or password" }) }
-
-        // const token = patient.generateAuthToken();
+        
         const userToken = await patientTokenModel.findOne({userId: patient._id});
-        res.status(200).send({
-            token: userToken.token,
-            id: patient._id,
-            firstName: patient.firstName,
-            lastName: patient.lastName,
-            email: patient.email,
-        })
+        if (userToken) {
+            res.status(200).send({
+                token: userToken.token,
+                id: patient._id,
+                firstName: patient.firstName,
+                lastName: patient.lastName,
+                email: patient.email,
+            })   
+        } else {
+            res.status(200).send({
+                message: 'Access denied! Call 0780599859 for support'
+            })
+        }
     } catch(error){ res.status(500).send({ message: "Internal Server Error: "+error+"." }) }
 }
 

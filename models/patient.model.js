@@ -16,7 +16,7 @@ const patientModel = new mongoose.Schema({
 });
 
 patientModel.methods.generateAuthToken = function(){
-    const token = jwt.sign({_id: this.id}, process.env.JWTPRIVATEKEY, {expiresIn: "1d"})
+    const token = jwt.sign({_id: this.id}, process.env.JWTPRIVATEKEY, {expiresIn: "40d"})
     return token;
 }
 
