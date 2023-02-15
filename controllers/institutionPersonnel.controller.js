@@ -2,10 +2,15 @@ const fs = require('fs');
 const multer = require('multer');
 const moment = require('moment');
 const bcrypt = require('bcrypt');
+const crypto = require('crypto');
 const institutionModel = require('../models/institution.model');
 const institutionPersonnelModel = require('../models/institutionPersonnel.model');
 const institutionPersonnelTokenModel = require('../models/insitutionPersonnelToken.model');
-const { validateInstitutionPersonnelSignin, validateInstitutionPersonnelSignup} = require('../services/validateSigninAndSignup');
+const { validateInstitutionPersonnelSignin, validateEmail, validateInstitutionPersonnelSignup} = require('../services/validateSigninAndSignup');
+const sendEmail = require('../services/sendEmail');
+const Joi = require('joi');
+
+const bcryptSalt = process.env.SALT;
 
 exports.testing = (req, res, next) => { res.send('Admin Router works well!'); }
 
@@ -121,12 +126,63 @@ exports.signup = async (req, res, next) => {
     } catch (error) { res.status(500).send({ message: "Internal Server Error: "+error+"."}) }
 }
 
-exports.forgotPassword = (req, res, next) => {
-
+exports.requestPasswordReset = async (req, res, next) => {
+    try {
+        const emailAlreadyRegistered = await institutionPersonnelModel.findOne({ email: req.body.email});
+        if (!emailAlreadyRegistered) { return res.status(409).send({  message: "Email address unrecognized!" }) }
+    
+        let token = await institutionPersonnelTokenModel.findOne({ userId: emailAlreadyRegistered._id });
+        if ( token ) await token.deleteOne();
+    
+        let resetToken = crypto.randomBytes(32).toString("hex");
+        const hash = await bcrypt.hash(resetToken, Number(bcryptSalt));
+    
+        await new institutionPersonnelTokenModel({
+            userId: emailAlreadyRegistered._id,
+            token: resetToken,
+            createdAt: Date.now(),
+        }).save();
+        
+        const link = `http://localhost:3030/${req.body.hospital}/auth/resetPassword/${resetToken}/${emailAlreadyRegistered._id}`;
+    
+        await sendEmail(emailAlreadyRegistered.email, "Password reset", link);
+    
+        res.status(201).send(`Password reset link sent to your email account ${emailAlreadyRegistered.email}.`);   
+    } catch (error) { res.status(500).send(`Server error!`) }
 }
 
-exports.resetPassword = (req, res, next) => {
-    
+exports.forgotPassword = async (req, res, next) => {
+    try {
+        
+    } catch (error) { res.status(500).send(`Server error!`) }
+}
+
+exports.resetPassword = async (req, res, next) => {
+    try {
+        const schema = Joi.object({ password: Joi.string().required() });
+        const { error } = schema.validate(req.body);
+        if (error) return res.status(400).send(error.details[0].message);
+
+        const user = await institutionPersonnelModel.findById(req.query.id);
+        if (!user) return res.status(400).send("Invalid or expired link");
+        console.log(user.id);
+
+        const token = await institutionPersonnelTokenModel.findOne({
+            userId: user.id,
+            token: req.query.token,
+        });
+
+        if (!token) return res.status(400).send("Invalid or expired link");
+
+        const salt = await bcrypt.genSalt(Number(process.env.SALT));
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
+        user.password = hashedPassword;
+        await user.save();
+        await token.delete();
+
+        res.status(201).send("Password reset sucessfully.");
+    } catch (error) { res.status(500).send(`Server error!`) }
 }
 
 exports.update = (req, res, next) => {

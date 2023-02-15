@@ -27,6 +27,13 @@ exports.validateInstitutionPersonnelSignup = data =>{
     return schema.validate(data)
 }
 
+exports.validateEmail = data =>{
+    const schema = Joi.object({
+        email: Joi.string().required().label('Email'),
+    })
+    return schema.validate(data)
+}
+
 exports.validatePatientSignin = data =>{
     const schema = Joi.object({
         email: Joi.string().required().label('Email'),
@@ -42,12 +49,11 @@ exports.validatePatientSignup = data =>{
         email: Joi.string().email().required().label('Email'),
         phone: Joi.string().required().label('Phone number'),
         residence: Joi.string().required().label('Residence'),
-        joinDate: Joi.string().required().label('Join Date'),
-        placeOfBirth: Joi.string().required().label('Place of birth'),
+        joinDate: Joi.date().required().label('Join Date'),
         dateOfBirth: Joi.string().required().label('Date of birth'),
-        maritalStatus: Joi.string().required().label('Marital status'),
         gender: Joi.string().required().label('Gender'),
         password: passwordComplexity().required().label('Password'),
+        registeredAt: Joi.string().required().label('Registered At'),
     })
     return schema.validate(data)
 }

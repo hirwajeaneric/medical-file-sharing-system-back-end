@@ -8,7 +8,7 @@ router.delete('/delete' , deleteRecord);
 router.get('/findById' , findById);
 router.get('/list' , findAll);
 router.get('/findByPatientId' , findByPatientId);
-router.get('/findByHospital' , findByHospitalId);
+router.get('/findByHospitalId' , findByHospitalId);
 router.get('/findByRecordOpener' , findByRecordOpener);
 
 module.exports = router;
