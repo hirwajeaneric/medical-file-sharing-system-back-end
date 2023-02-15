@@ -66,7 +66,7 @@ exports.findAll = (req, res, next) => {
 }
 
 exports.findById = (req, res, next) => {
-    institutionModel.findById(req.query.id) 
+    institutionModel.findOne(req.query.id) 
     .then(response => {
         res.status(201).send(response);
     })

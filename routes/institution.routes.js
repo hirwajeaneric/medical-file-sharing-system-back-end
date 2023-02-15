@@ -10,6 +10,7 @@ router.get('/findByCode', findByCode);
 router.get('/findByCertificate', findByCertificate);
 router.post('/approve', approve);
 router.post('/add', upload.single('fileAttachment'), attachFile, add);
-router.put('/update', upload.single('fileAttachment'), attachFile, update);
+router.put('/updateTwo', upload.single('fileAttachment'), attachFile, update);
+router.put('/updateOne', update);
 
 module.exports = router;
