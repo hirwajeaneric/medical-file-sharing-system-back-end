@@ -16,7 +16,8 @@ const fileModel = new mongoose.Schema({
     hospitalName: {type: String, required: true},
     hospitalId: {type: String, required: true},
     hospitalLocation: {type: String, required: true},
-    fileAttachment: {type: String, required: false}
+    fileAttachment: {type: String, required: false},
+    hospitalLogo: {type: String, require: false},
 });
 
 const File = mongoose.model('file', fileModel);
