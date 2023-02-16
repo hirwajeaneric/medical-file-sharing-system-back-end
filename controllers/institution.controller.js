@@ -66,7 +66,7 @@ exports.findAll = (req, res, next) => {
 }
 
 exports.findById = (req, res, next) => {
-    institutionModel.findById(req.query.id) 
+    institutionModel.findOne(req.query.id) 
     .then(response => {
         res.status(201).send(response);
     })
@@ -97,12 +97,8 @@ exports.findByName = (req, res, next) => {
 
 exports.findByCode = (req, res, next) => {
     institutionModel.findOne({ institutionCode : req.query.institutionCode}) 
-    .then(response => {
-        res.status(201).send(response);
-    })
-    .catch(err => {
-        res.status(500).send(`Server error ${err}`)
-    })
+    .then(response => { res.status(201).send(response) })
+    .catch(err => { res.status(500).send(`Server error ${err}`) })
 }
 
 exports.findByCertificate = (req, res, next) => {

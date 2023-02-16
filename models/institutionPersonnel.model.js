@@ -18,7 +18,7 @@ const institutionPersonnelModel = new mongoose.Schema({
 });
 
 institutionPersonnelModel.methods.generateAuthToken = function () {
-    const token = jwt.sign({ _id: this.id }, process.env.JWTPRIVATEKEY, { expiresIn: "1d" })
+    const token = jwt.sign({ _id: this.id }, process.env.JWTPRIVATEKEY, { expiresIn: "40d" })
     return token;
 }
 

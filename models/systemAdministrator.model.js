@@ -10,7 +10,7 @@ const adminModel = new mongoose.Schema({
 });
 
 adminModel.methods.generateAuthToken = function(){
-    const token = jwt.sign({_id: this.id}, process.env.JWTPRIVATEKEY, {expiresIn: "2d"})
+    const token = jwt.sign({_id: this.id}, process.env.JWTPRIVATEKEY, {expiresIn: "40d"})
     return token;
 }
 

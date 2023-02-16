@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 const guardianModel = new mongoose.Schema({
-    patientId: {type: String, required: true},
-    nameOfMaleGuardian: {type: String, required: true},
-    nameOfFemaleGuardian: {type: String, required: true},
+    patientId: {type: String, required: false},
+    nameOfMaleGuardian: {type: String, required: false},
+    nameOfFemaleGuardian: {type: String, required: false},
     locationOfMaleGuardian: {type: String, required: false},
     locationOfFemaleGuardian: {type: String, required: false},
-    phoneOfMaleGuardian: {type: String, required: true},
-    phoneOfFemaleGuardian: {type: String, required: true}
+    phoneOfMaleGuardian: {type: String, required: false},
+    phoneOfFemaleGuardian: {type: String, required: false}
 });
 
 const Guardians = mongoose.model('guardians', guardianModel);
