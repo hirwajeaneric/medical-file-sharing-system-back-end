@@ -14,7 +14,7 @@ const multerStorage = multer.diskStorage({
         callback(null, './uploads')
     },
     filename: (req, file, callback) => {
-        callback(null, `logo-${req.body.name}`)
+        callback(null, `${file.originalname}`)
     }
 })
 
@@ -22,6 +22,16 @@ exports.upload = multer({ storage: multerStorage});
 
 exports.attachFile = (req, res, next) => {
     req.body.logo = req.file.filename;
+    next();
+}
+
+exports.attachLogo = (req, res, next) => {
+    req.body.logo = req.file.filename;
+    next();
+}
+
+exports.attachCertificate = (req, res, next) => {
+    req.body.certificate = req.file.filename;
     next();
 }
 
@@ -66,7 +76,7 @@ exports.findAll = (req, res, next) => {
 }
 
 exports.findById = (req, res, next) => {
-    institutionModel.findOne(req.query.id) 
+    institutionModel.findById(req.query.id) 
     .then(response => {
         res.status(201).send(response);
     })
