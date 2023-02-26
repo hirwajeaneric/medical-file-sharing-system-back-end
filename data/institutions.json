@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "63dfc8b2dc0bfa936ad96eff"
+  },
+  "name": "King Faisal Hospital",
+  "type": "Hospital",
+  "location": "Kigali, Gasabo, Kacyiru",
+  "directorId": "63dfc737a3bf3dec5f9d0b7d",
+  "directorName": "Alpha Michelange Kalinganire Ishimwe",
+  "specialization": "",
+  "joinDate": "2023-02-05T10:36:29.207Z",
+  "logo": "KFH-logo-vector-format.png",
+  "isApproved": "true",
+  "certificate": "New Resume.pdf",
+  "numberOfPersonnel": "7",
+  "institutionCode": "kingfaisalhospital",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e8ced7a1606b0d4a64c24a"
+  },
+  "name": "CHUK",
+  "type": "Hospital",
+  "location": "Kigali, Nyarugenge, Muhima",
+  "directorId": "63e8ce73a1606b0d4a64c239",
+  "directorName": "Impuhwe Stella",
+  "specialization": "",
+  "joinDate": "2023-02-12T11:34:47.988Z",
+  "logo": "",
+  "isApproved": "true",
+  "certificate": "file-12-02-2023-Job Advert - IT Specialist Network Infrastructure.pdf",
+  "numberOfPersonnel": "96",
+  "institutionCode": "chuk",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e92c2d7550e010a53a9e65"
+  },
+  "name": "CHUB",
+  "type": "Hospital",
+  "location": "Southern, Huye, Huye",
+  "directorId": "63e92bc07550e010a53a9e54",
+  "directorName": "Niyomufasha Marvin",
+  "specialization": "",
+  "joinDate": "2023-02-12T18:13:01.165Z",
+  "logo": "logo_chub.jpg",
+  "isApproved": "true",
+  "certificate": "file-12-02-2023-Job Advert - IT Support Engineer.pdf",
+  "numberOfPersonnel": "50",
+  "institutionCode": "chub",
+  "__v": 0
+}]

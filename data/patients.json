@@ -1,0 +1,155 @@
+[{
+  "_id": {
+    "$oid": "63df713e8b9828369b8a3cba"
+  },
+  "firstName": "Iradukunda ",
+  "lastName": "Joel",
+  "email": "joeliradukunda@gmail.com",
+  "phone": "0789321232",
+  "password": "$2b$10$.f0ZYaRjTkHBet2It7PZ6uwP3IhIRiMoRm6lopXXyJ1hiLC/X2ohy",
+  "residence": "Western, Rubavu, Gisenyi",
+  "placeOfBirth": "Rubavu, Gisenyi",
+  "dateOfBirth": "1998-02-08",
+  "maritalStatus": "single",
+  "gender": "male",
+  "joinDate": "Sun Feb 05 2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63df742e8b9828369b8a3cc2"
+  },
+  "firstName": "Bailly",
+  "lastName": "Muyango ",
+  "email": "muyangobailly@gmail.com",
+  "phone": "0782102321",
+  "password": "$2b$10$o2bM9K2hqVcufBpFFewx0.0.4r23nQW85NIJvI7JbOUIMSsAAnaz2",
+  "residence": "Kigali, Nyarugenge, Kanyinya",
+  "placeOfBirth": "Nyarugenge, Kanyinya",
+  "dateOfBirth": "1993-02-22",
+  "maritalStatus": "married",
+  "gender": "male",
+  "joinDate": "Sun Feb 05 2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63df76688b9828369b8a3cca"
+  },
+  "firstName": "David",
+  "lastName": "Kamana",
+  "email": "davidkamana122@gmail.com",
+  "phone": "0793923421",
+  "password": "$2b$10$9ApND3lXEnMmDul2/xQ6Hu15fGLv0a0mT26a6mtgbG50UIqUTpkk2",
+  "residence": "Northern, Gakenke, Muyongwe ",
+  "placeOfBirth": "Gakenke Muyongwe",
+  "dateOfBirth": "1984-02-28",
+  "maritalStatus": "single",
+  "gender": "male",
+  "joinDate": "Sun Feb 05 2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e52061a67a033b0c730370"
+  },
+  "firstName": "Ishimwe",
+  "lastName": "Belyse",
+  "email": "ishimwebelyse@gmail.com",
+  "phone": "0795943424",
+  "password": "$2b$10$7p41LYEpyUz/gulXKW3TPujIDNdTMaX3RQwssHbCvjlpLUL2wNJsi",
+  "residence": "Kigali, Kicukiro, Kanombe",
+  "placeOfBirth": "Kicukiro Kanombe",
+  "dateOfBirth": "2010-02-21",
+  "maritalStatus": "single",
+  "gender": "female",
+  "joinDate": "Thu Feb 09 2023",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ea7c269f035884b8ca97e8"
+  },
+  "firstName": "Hirwa",
+  "lastName": "Jean Eric",
+  "email": "hirwaminerve25@gmail.com",
+  "phone": "0780599859",
+  "password": "$2b$10$LX7Kh8KCdjXakjZXvP0AeOq39pGbpsWEeqqoj2k/XPMrjkVvn8oXS",
+  "residence": "Kigali, Gasabo, Kacyiru",
+  "dateOfBirth": "1998-04-25",
+  "gender": "male",
+  "joinDate": "2023-02-13T18:05:23.890Z",
+  "registeredAt": "CHUK",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ea7d919f035884b8ca97f2"
+  },
+  "firstName": "Umubyeyi",
+  "lastName": "Marie Bienvenue",
+  "email": "umubyeyimariebienvenue@gmail.com",
+  "phone": "0780577120",
+  "password": "$2b$10$P2P830JZqorB5Fu9w22Q8uEwvobu5N1OXBGGBXdUXsveE33kCS7k.",
+  "residence": "Kigali, Gasabo, Kacyiru",
+  "dateOfBirth": "2000-01-29",
+  "gender": "female",
+  "joinDate": "2023-02-13T18:10:49.205Z",
+  "registeredAt": "CHUK",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ed13a525e5d5ae9ce4d14d"
+  },
+  "firstName": "Kalinganire Ishimwe",
+  "lastName": "Alpha Michelange",
+  "email": "kalphamike@gmail.com",
+  "phone": "0781125332",
+  "password": "$2b$10$I.rctQ9CzUY3NKyOa3qTjOK/6T083dwJux1piKYtEGJpUH7P5224W",
+  "residence": "Kigali, Gasabo, Jali",
+  "dateOfBirth": "1996-02-07",
+  "gender": "male",
+  "joinDate": "2023-02-15T17:15:22.926Z",
+  "registeredAt": "CHUB",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ef924f032f573fb5452da8"
+  },
+  "firstName": "John",
+  "lastName": "Daniels",
+  "email": "johndaniels@gmail.com",
+  "phone": "0789744383",
+  "password": "$2b$10$2bTwf7K/8PEFrNysHFevA.1vhSOCliKKp7r.gD1EaTCKr2QGgTNuK",
+  "residence": "Eastern, Kayonza, Murama",
+  "dateOfBirth": "2016-06-10",
+  "gender": "male",
+  "joinDate": "2023-02-17T14:40:11.734Z",
+  "registeredAt": "King Faisal Hospital",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f0c3996ebeda7695cd5e23"
+  },
+  "firstName": "Rulinda",
+  "lastName": "Luc Donald",
+  "email": "rulindadonald@gmail.com",
+  "phone": "0789320332",
+  "password": "$2b$10$TvujR/f.UHiiDXQtsSl1XOe9PmHW/y7eQcwSTWABWz2j7hOwDKofO",
+  "residence": "Kigali, Nyarugenge, Kimisagara",
+  "dateOfBirth": "1996-01-10",
+  "gender": "male",
+  "joinDate": "2023-02-18T12:22:54.451Z",
+  "registeredAt": "King Faisal Hospital",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f261e506efa71dcbbf07d5"
+  },
+  "firstName": "Murenzi",
+  "lastName": "Hubert",
+  "email": "murenzihubert@gmail.com",
+  "phone": "0782322198",
+  "password": "$2b$10$WCxTLCr3uchUPfMnwCxSQ.l0agUALZSci.IOr/zCHLWCUmiGZcrpW",
+  "residence": "Eastern, Nyagatare, MIMURI",
+  "dateOfBirth": "2002-06-12",
+  "gender": "male",
+  "joinDate": "2023-02-19T17:50:41.511Z",
+  "registeredAt": "King Faisal Hospital",
+  "__v": 0
+}]

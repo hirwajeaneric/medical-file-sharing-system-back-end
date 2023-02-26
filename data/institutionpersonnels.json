@@ -1,0 +1,290 @@
+[{
+  "_id": {
+    "$oid": "63dfc737a3bf3dec5f9d0b7d"
+  },
+  "firstName": "Alpha Michelange",
+  "lastName": "Kalinganire Ishimwe",
+  "userCode": "KING001",
+  "email": "kalphamike@gmail.com",
+  "password": "$2b$10$IkStJbeoe3F8kIf9n48tMO7aubHd6oVxaD66d.llC7lc5wjHDICUy",
+  "phone": "0789223142",
+  "role": "Representative",
+  "isActive": "true",
+  "applicationDate": "2023-02-05T10:36:29.207Z",
+  "institutionId": "63dfc8b2dc0bfa936ad96eff",
+  "institutionName": "King Faisal Hospital",
+  "__v": 0,
+  "institutionCode": "kingfaisalhospital"
+},{
+  "_id": {
+    "$oid": "63dfc914dc0bfa936ad96f0e"
+  },
+  "firstName": "Mukarugwiro",
+  "lastName": "Agnes",
+  "userCode": "KING002",
+  "email": "mukarugwiroagnes@gmail.com",
+  "password": "$2b$10$5rUlZh84O2FscdcgtloAQ.EDs6Olp/SHl7dZttWcnPxoJosi4fkou",
+  "phone": "0781212123",
+  "role": "doctor",
+  "isActive": "true",
+  "joinDate": "2023-02-05T10:36:29.207Z",
+  "institutionId": "63dfc8b2dc0bfa936ad96eff",
+  "institutionName": "King Faisal Hospital",
+  "institutionCode": "kingfaisalhospital",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63dfced0f3d06c8cf38b6ab3"
+  },
+  "firstName": "Mugisha",
+  "lastName": "Aime Jules",
+  "userCode": "KING003",
+  "email": "mugishaaimejules@gmail.com",
+  "password": "$2b$10$ICiP.SQ2IAzTIbYdRfjah.lokySEqpjEERqrIOnzJPp6KhfyT61n2",
+  "phone": "0781243242",
+  "role": "nurse",
+  "isActive": "true",
+  "joinDate": "2023-02-05T10:36:29.207Z",
+  "institutionId": "63dfc8b2dc0bfa936ad96eff",
+  "institutionName": "King Faisal Hospital",
+  "institutionCode": "kingfaisalhospital",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63dfcf04f3d06c8cf38b6abb"
+  },
+  "firstName": "Muneza",
+  "lastName": "Christophe",
+  "userCode": "KING004",
+  "email": "muneza@gmail.com",
+  "password": "$2b$10$ILcoB4cmEB9TMy9VBow3R.yr.cHlcnpwpoWsGKvp5FKa4hXWtETCC",
+  "phone": "0793240203",
+  "role": "lab technician",
+  "isActive": "true",
+  "joinDate": "2023-02-05T10:36:29.207Z",
+  "institutionId": "63dfc8b2dc0bfa936ad96eff",
+  "institutionName": "King Faisal Hospital",
+  "institutionCode": "kingfaisalhospital",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e55ba2a67a033b0c730695"
+  },
+  "firstName": "Akanyana",
+  "lastName": "Benitha",
+  "userCode": "KING005",
+  "email": "akanyanabenitha@gmail.com",
+  "password": "$2b$10$1iIpfAc26Q8dLQ6cDii7Qu./ayGfGn1kDaLsxCdIzN/Nf8/E1NLsG",
+  "phone": "0789222342",
+  "role": "doctor",
+  "isActive": "true",
+  "joinDate": "2023-02-09T10:36:29.207Z",
+  "institutionId": "63dfc8b2dc0bfa936ad96eff",
+  "institutionName": "King Faisal Hospital",
+  "institutionCode": "kingfaisalhospital",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e8ce73a1606b0d4a64c239"
+  },
+  "firstName": "Impuhwe",
+  "lastName": "Stella",
+  "userCode": "CHUK001",
+  "email": "stellahimpuhwe@gmail.com",
+  "password": "$2b$10$IgpxHU23sYP7.cXD.GWoQu2Jqwlct0d9biuqD8avZnY7j6mlDok/y",
+  "phone": "0783212492",
+  "role": "Representative",
+  "isActive": "true",
+  "applicationDate": "2023-02-12T11:32:37.958Z",
+  "institutionId": "63e8ced7a1606b0d4a64c24a",
+  "institutionName": "CHUK",
+  "__v": 0,
+  "institutionCode": "chuk"
+},{
+  "_id": {
+    "$oid": "63e8cfc5a1606b0d4a64c279"
+  },
+  "firstName": "Uwamahoro",
+  "lastName": "Diane",
+  "userCode": "CHUK002",
+  "email": "uwamahorodiane@gmail.com",
+  "password": "$2b$10$mhiOW5yYe3cn0Eikj0a6VOXWfAIrCaiDjMbsP/K3NoHDNtnykBiXG",
+  "phone": "0781153530",
+  "role": "nurse",
+  "isActive": "true",
+  "joinDate": "Sun Feb 12 2023",
+  "institutionId": "63e8ced7a1606b0d4a64c24a",
+  "institutionName": "CHUK",
+  "institutionCode": "chuk",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e8cfe2a1606b0d4a64c281"
+  },
+  "firstName": "Uwajeneza",
+  "lastName": "Nicole",
+  "userCode": "CHUK003",
+  "email": "uwajenezanicole@gmail.com",
+  "password": "$2b$10$m/7LgalburU7NF/NkoBAE.ngY5ru.T0I59mH0xX8SBpV1MPZnacHa",
+  "phone": "0789320313",
+  "role": "doctor",
+  "isActive": "true",
+  "joinDate": "Sun Feb 12 2023",
+  "institutionId": "63e8ced7a1606b0d4a64c24a",
+  "institutionName": "CHUK",
+  "institutionCode": "chuk",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e8d00da1606b0d4a64c289"
+  },
+  "firstName": "Kirenga",
+  "lastName": "Bryan",
+  "userCode": "CHUK004",
+  "email": "kirengabryan@gmail.com",
+  "password": "$2b$10$.ryWEHyeS3Sn1KwhUlr/zum81DChzOnjx/IJi8zQF2T/5JmsEs8Qq",
+  "phone": "0783200492",
+  "role": "lab technician",
+  "isActive": "true",
+  "joinDate": "Sun Feb 12 2023",
+  "institutionId": "63e8ced7a1606b0d4a64c24a",
+  "institutionName": "CHUK",
+  "institutionCode": "chuk",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e92bc07550e010a53a9e54"
+  },
+  "firstName": "Niyomufasha",
+  "lastName": "Marvin",
+  "userCode": "CHUB001",
+  "email": "niyomufasha@gmail.com",
+  "password": "$2b$10$On2d.p7f.vpuxfWrtiEkFOvK0Up2.jFD3zGSQYIzo4GYz3nOkXKx.",
+  "phone": "0781153350",
+  "role": "Representative",
+  "isActive": "true",
+  "applicationDate": "2023-02-12T18:10:24.406Z",
+  "institutionId": "63e92c2d7550e010a53a9e65",
+  "institutionName": "CHUB",
+  "__v": 0,
+  "institutionCode": "chub"
+},{
+  "_id": {
+    "$oid": "63e92eac7550e010a53a9eaa"
+  },
+  "firstName": "Kazeneza",
+  "lastName": "Gloria",
+  "userCode": "CHUB002",
+  "email": "kazenezagloria@gmail.com",
+  "password": "$2b$10$4.XK87lKXOJ0NZkcPaHo1eX95wZwiwYjoSkO7SufZOa8IhosOr9g2",
+  "phone": "0783212430",
+  "role": "doctor",
+  "isActive": "true",
+  "joinDate": "Sun Feb 12 2023",
+  "institutionId": "63e92c2d7550e010a53a9e65",
+  "institutionName": "CHUB",
+  "institutionCode": "chub",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e92ee67550e010a53a9eb2"
+  },
+  "firstName": "Munyangabo Karekezi",
+  "lastName": "Darxy Mael",
+  "userCode": "CHUB003",
+  "email": "darxymael@gmail.com",
+  "password": "$2b$10$lQH3NyyMOCCe84MuqaOSFOgjzvuS2z.KWtwfU/F7sGLtdKk4zFaRy",
+  "phone": "0793203122",
+  "role": "nurse",
+  "isActive": "true",
+  "joinDate": "Sun Feb 12 2023",
+  "institutionId": "63e92c2d7550e010a53a9e65",
+  "institutionName": "CHUB",
+  "institutionCode": "chub",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e92f077550e010a53a9eba"
+  },
+  "firstName": "Iradukunda",
+  "lastName": "Omer",
+  "userCode": "CHUB004",
+  "email": "iradukundaomer@gmail.com",
+  "password": "$2b$10$QEbx/jgkAFuYua2go8u6YeHX/23rvPdth0AdIuIeps9.7E9VGgAfq",
+  "phone": "0783200123",
+  "role": "lab technician",
+  "isActive": "true",
+  "joinDate": "Sun Feb 12 2023",
+  "institutionId": "63e92c2d7550e010a53a9e65",
+  "institutionName": "CHUB",
+  "institutionCode": "chub",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e92f2e7550e010a53a9ec2"
+  },
+  "firstName": "Niyomugabo",
+  "lastName": "Olivier",
+  "userCode": "CHUB005",
+  "email": "niyomugaboolivier@gmail.com",
+  "password": "$2b$10$4VyzAhQ8kfQspggLD6pjJe3r2mBw4TRfSeg1PhQPxAxlbc9CZEUKq",
+  "phone": "0790930233",
+  "role": "doctor",
+  "isActive": "true",
+  "joinDate": "Sun Feb 12 2023",
+  "institutionId": "63e92c2d7550e010a53a9e65",
+  "institutionName": "CHUB",
+  "institutionCode": "chub",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ec81e9f110c160c145ae39"
+  },
+  "firstName": "Hirwa",
+  "lastName": "Jean Eric",
+  "userCode": "CHUB006",
+  "email": "hirwajeric@gmail.com",
+  "phone": "0780599859",
+  "role": "doctor",
+  "isActive": "true",
+  "joinDate": "Wed Feb 15 2023",
+  "institutionId": "63e92c2d7550e010a53a9e65",
+  "institutionName": "CHUB",
+  "institutionCode": "chub",
+  "__v": 0,
+  "password": "$2b$10$KzYsfXWvQVvX126C50WPU.puCipYXslnj7Vf5ofNiAv9lXkTpZxPm"
+},{
+  "_id": {
+    "$oid": "63edcb08fad5fa857f405926"
+  },
+  "firstName": "Karebu",
+  "lastName": "Jules",
+  "userCode": "KING006",
+  "email": "karebujules@gmail.com",
+  "password": "$2b$10$rHpskx6.HhkUG.ZG8rp9HORPTVv81ZpI8Oad2mSUUtDaiCqjMM462",
+  "phone": "0782321228",
+  "role": "nurse",
+  "isActive": "true",
+  "joinDate": "Thu Feb 16 2023",
+  "institutionId": "63dfc8b2dc0bfa936ad96eff",
+  "institutionName": "King Faisal Hospital",
+  "institutionCode": "kingfaisalhospital",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63edcbabfad5fa857f405938"
+  },
+  "firstName": "Mugisha",
+  "lastName": "Brown",
+  "userCode": "KING007",
+  "email": "mugishabrown@gmail.com",
+  "password": "$2b$10$UP4BWaUpXG.AW3or8DQcceHoHKuHeU2/VvTfx1k7XfdMb.dIuMEmC",
+  "phone": "0782973283",
+  "role": "doctor",
+  "isActive": "true",
+  "joinDate": "Thu Feb 16 2023",
+  "institutionId": "63dfc8b2dc0bfa936ad96eff",
+  "institutionName": "King Faisal Hospital",
+  "institutionCode": "kingfaisalhospital",
+  "__v": 0
+}]
