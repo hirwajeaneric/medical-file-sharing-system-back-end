@@ -13,7 +13,9 @@ const institutionModel = new mongoose.Schema({
     certificate: {type: String, required: true},
     numberOfPersonnel: { type: String, required: true },
     institutionCode: { type: String, required: false },
-    postalCode: { type: String, required: false }
+    postalBox: { type: String, required: false },
+    contactEmail: { type: String, required: false },
+    contactPhone: { type: String, required: false }
 });
 
 const Institution = mongoose.model('institution', institutionModel);
