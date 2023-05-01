@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "63df71438b9828369b8a3cbf"
+  },
+  "patientId": "63df713e8b9828369b8a3cba",
+  "nameOfMaleGuardian": "Kamana David",
+  "nameOfFemaleGuardian": "Nyiramana Claudine",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "0792134392",
+  "phoneOfFemaleGuardian": "0795323213",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63df74348b9828369b8a3cc7"
+  },
+  "patientId": "63df742e8b9828369b8a3cc2",
+  "nameOfMaleGuardian": "Muyango Anastase",
+  "nameOfFemaleGuardian": "Karekezi Chantal",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "0792303103",
+  "phoneOfFemaleGuardian": "0793203234",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63df766d8b9828369b8a3ccf"
+  },
+  "patientId": "63df76688b9828369b8a3cca",
+  "nameOfMaleGuardian": "Kamana Sylvestre",
+  "nameOfFemaleGuardian": "Mukakamana Belancile",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "07820133221",
+  "phoneOfFemaleGuardian": "0782032333",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e52066a67a033b0c730375"
+  },
+  "patientId": "63e52061a67a033b0c730370",
+  "nameOfMaleGuardian": "Mukamana Alice",
+  "nameOfFemaleGuardian": "Ishimwe Martin",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "0784330213",
+  "phoneOfFemaleGuardian": "0789320333",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ea7c2c9f035884b8ca97ed"
+  },
+  "patientId": "63ea7c269f035884b8ca97e8",
+  "nameOfMaleGuardian": "Hakizimana Jean Bosco",
+  "nameOfFemaleGuardian": "Utumatwizera Genevieve Marie Chantal",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "0784006647",
+  "phoneOfFemaleGuardian": "0788669381",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ea7d969f035884b8ca97f7"
+  },
+  "patientId": "63ea7d919f035884b8ca97f2",
+  "nameOfMaleGuardian": "Hakizimana Jean Bosco",
+  "nameOfFemaleGuardian": "Utumatwizera Genevieve Marie Chantal",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "0784006647",
+  "phoneOfFemaleGuardian": "0788669381",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ed13aa25e5d5ae9ce4d152"
+  },
+  "patientId": "63ed13a525e5d5ae9ce4d14d",
+  "nameOfMaleGuardian": "Kalinganire",
+  "nameOfFemaleGuardian": "Kalinganire",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "0783290423",
+  "phoneOfFemaleGuardian": "0782321998",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ef9255032f573fb5453235"
+  },
+  "patientId": "63ef924f032f573fb5452da8",
+  "nameOfMaleGuardian": "Hello Johns",
+  "nameOfFemaleGuardian": "Hello Janet",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "0781232423",
+  "phoneOfFemaleGuardian": "0789321112",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f0c39e6ebeda7695cd5fdb"
+  },
+  "patientId": "63f0c3996ebeda7695cd5e23",
+  "nameOfMaleGuardian": "Rulinda Mike",
+  "nameOfFemaleGuardian": "Rulinda Emma",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "0789284394",
+  "phoneOfFemaleGuardian": "0893242134",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f261eb06efa71dcbbf07da"
+  },
+  "patientId": "63f261e506efa71dcbbf07d5",
+  "nameOfMaleGuardian": "Murenzi Ngabo Richard",
+  "nameOfFemaleGuardian": "Murenzi Marie Anet",
+  "locationOfMaleGuardian": "",
+  "locationOfFemaleGuardian": "",
+  "phoneOfMaleGuardian": "0788622146",
+  "phoneOfFemaleGuardian": "0786764434",
+  "__v": 0
+}]

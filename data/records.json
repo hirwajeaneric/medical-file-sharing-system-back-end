@@ -1,0 +1,256 @@
+[{
+  "_id": {
+    "$oid": "63dfcf66f3d06c8cf38b6ad3"
+  },
+  "firstName": "Iradukunda ",
+  "lastName": "Joel",
+  "patientId": "63df713e8b9828369b8a3cba",
+  "email": "joeliradukunda@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "Mugisha Aime Jules",
+  "openTime": "2023-02-05T08:20:00.207Z",
+  "closeTime": "2023-02-11T00:00:29.207Z",
+  "status": "closed",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e7bdb970c966f47e411abf"
+  },
+  "firstName": "Iradukunda ",
+  "lastName": "Joel",
+  "patientId": "63df713e8b9828369b8a3cba",
+  "email": "joeliradukunda@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "Mugisha Aime Jules",
+  "openTime": "2023-02-11T10:36:29.207Z",
+  "closeTime": "2023-02-12T10:32:29.207Z",
+  "status": "closed",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e8c0894cbfff38fb072248"
+  },
+  "firstName": "Iradukunda ",
+  "lastName": "Joel",
+  "patientId": "63df713e8b9828369b8a3cba",
+  "email": "joeliradukunda@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "Mugisha Aime Jules",
+  "openTime": "2023-02-12T10:30:29.207Z",
+  "closeTime": "2023-02-12T16:57:12.017Z",
+  "status": "closed",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e8c12d4cbfff38fb072266"
+  },
+  "firstName": "Iradukunda ",
+  "lastName": "Joel",
+  "patientId": "63df713e8b9828369b8a3cba",
+  "email": "joeliradukunda@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "Mugisha Aime Jules",
+  "openTime": "2023-02-12T10:36:29.207Z",
+  "closeTime": "2023-02-12T20:50:12.017Z",
+  "status": "closed",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e8c6084cbfff38fb0722ca"
+  },
+  "firstName": "Ishimwe",
+  "lastName": "Belyse",
+  "patientId": "63e52061a67a033b0c730370",
+  "email": "ishimwebelyse@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "Mugisha Aime Jules",
+  "openTime": "2023-02-12T10:57:12.017Z",
+  "closeTime": "2023-02-13T10:57:12.017Z",
+  "status": "closed",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e8d052a1606b0d4a64c2af"
+  },
+  "firstName": "David",
+  "lastName": "Kamana",
+  "patientId": "63df76688b9828369b8a3cca",
+  "email": "davidkamana122@gmail.com",
+  "hospitalName": "CHUK",
+  "hospitalId": "63e8ced7a1606b0d4a64c24a",
+  "recordOpener": "Uwamahoro Diane",
+  "recordCloser": "",
+  "openTime": "2023-02-12T11:41:06.786Z",
+  "closeTime": "",
+  "status": "open",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e933387550e010a53a9ee1"
+  },
+  "firstName": "Bailly",
+  "lastName": "Muyango ",
+  "patientId": "63df742e8b9828369b8a3cc2",
+  "email": "muyangobailly@gmail.com",
+  "hospitalName": "CHUB",
+  "hospitalId": "63e92c2d7550e010a53a9e65",
+  "recordOpener": "Karekezi Darxy Mael",
+  "recordCloser": "Karekezi Darxy Mael",
+  "openTime": "2023-02-12T18:43:04.050Z",
+  "closeTime": "2023-02-12T19:57:12.017Z",
+  "status": "closed",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f0c2b06ebeda7695cd0a30"
+  },
+  "firstName": "Bailly",
+  "lastName": "Muyango ",
+  "patientId": "63df742e8b9828369b8a3cc2",
+  "email": "muyangobailly@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "Mugisha Aime Jules",
+  "openTime": "2023-02-18T12:21:04.450Z",
+  "closeTime": "2023-02-19T19:20:04.450Z",
+  "status": "closed",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f0c3046ebeda7695cd2768"
+  },
+  "firstName": "David",
+  "lastName": "Kamana",
+  "patientId": "63df76688b9828369b8a3cca",
+  "email": "davidkamana122@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "",
+  "openTime": "2023-02-18T12:22:28.840Z",
+  "closeTime": "",
+  "status": "open",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f25aa106efa71dcbbf071f"
+  },
+  "firstName": "Hirwa",
+  "lastName": "Jean Eric",
+  "patientId": "63ea7c269f035884b8ca97e8",
+  "email": "hirwaminerve25@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "",
+  "openTime": "2023-02-19T17:21:37.874Z",
+  "closeTime": "",
+  "status": "open",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f2623706efa71dcbbf081a"
+  },
+  "firstName": "Murenzi",
+  "lastName": "Hubert",
+  "patientId": "63f261e506efa71dcbbf07d5",
+  "email": "murenzihubert@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "Mugisha Aime Jules",
+  "openTime": "2023-02-19T17:53:59.774Z",
+  "closeTime": "2023-02-19T17:56:19.223Z",
+  "status": "closed",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f2638f06efa71dcbbf0879"
+  },
+  "firstName": "Murenzi",
+  "lastName": "Hubert",
+  "patientId": "63f261e506efa71dcbbf07d5",
+  "email": "murenzihubert@gmail.com",
+  "hospitalName": "King Faisal Hospital",
+  "hospitalId": "63dfc8b2dc0bfa936ad96eff",
+  "recordOpener": "Mugisha Aime Jules",
+  "recordCloser": "",
+  "openTime": "2023-02-19T17:59:43.266Z",
+  "closeTime": "",
+  "status": "open",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f264a206efa71dcbbf08c7"
+  },
+  "firstName": "Murenzi",
+  "lastName": "Hubert",
+  "patientId": "63f261e506efa71dcbbf07d5",
+  "email": "murenzihubert@gmail.com",
+  "hospitalName": "CHUB",
+  "hospitalId": "63e92c2d7550e010a53a9e65",
+  "recordOpener": "Munyangabo Karekezi Darxy Mael",
+  "recordCloser": "Munyangabo Karekezi Darxy Mael",
+  "openTime": "2023-02-19T18:04:18.141Z",
+  "closeTime": "2023-02-19T18:05:21.496Z",
+  "status": "closed",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f265d506efa71dcbbf0902"
+  },
+  "firstName": "Murenzi",
+  "lastName": "Hubert",
+  "patientId": "63f261e506efa71dcbbf07d5",
+  "email": "murenzihubert@gmail.com",
+  "hospitalName": "CHUB",
+  "hospitalId": "63e92c2d7550e010a53a9e65",
+  "recordOpener": "Munyangabo Karekezi Darxy Mael",
+  "recordCloser": "",
+  "openTime": "2023-02-19T18:09:25.500Z",
+  "closeTime": "",
+  "status": "open",
+  "insuranceName": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f265e606efa71dcbbf091b"
+  },
+  "firstName": "Hirwa",
+  "lastName": "Jean Eric",
+  "patientId": "63ea7c269f035884b8ca97e8",
+  "email": "hirwaminerve25@gmail.com",
+  "hospitalName": "CHUB",
+  "hospitalId": "63e92c2d7550e010a53a9e65",
+  "recordOpener": "Munyangabo Karekezi Darxy Mael",
+  "recordCloser": "",
+  "openTime": "2023-02-19T18:09:42.297Z",
+  "closeTime": "",
+  "status": "open",
+  "insuranceName": "",
+  "__v": 0
+}]

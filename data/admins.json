@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "63dfc7b6a3bf3dec5f9d0b88"
+  },
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "johndoe@gmail.com",
+  "phone": "0780599839",
+  "password": "$2b$10$4bK0r0bwx69u7K2ZQUOmO.9QKvZMf7EZIJL6iX4bzfd9pSHl/wdl2",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63e5211ba67a033b0c730387"
+  },
+  "firstName": "Hirwa",
+  "lastName": "Jean Eric",
+  "email": "hirwajeaneric25@gmail.com",
+  "phone": "0780599859",
+  "password": "$2b$10$yeANxg203Opxa1m6/gD0ru2ZGO0ldFw06QXZwhnD.S2K9lpdA1flO",
+  "__v": 0
+}]
