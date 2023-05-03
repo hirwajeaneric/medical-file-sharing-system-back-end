@@ -12,6 +12,7 @@ const institutionRoutes = require('./routes/institution.routes');
 const institutionPersonnelRoutes = require('./routes/institutionPersonnel.routes');
 const patientRoutes = require('./routes/patient.routes');
 const recordRoutes = require('./routes/record.routes');
+const emailRoutes = require('./routes/email.routes');
 
 connection();
 
@@ -20,6 +21,7 @@ app.use(cors());
 
 //Routes
 app.use('/api/mfss/uploads/', express.static('./uploads'));
+app.use('/api/mfss/email/', emailRoutes);
 app.use('/api/mfss/admin/', adminRoutes);
 app.use('/api/mfss/applicationForInstitution/', applicationForInstitutionRoutes);
 app.use('/api/mfss/file/', fileRoutes);
