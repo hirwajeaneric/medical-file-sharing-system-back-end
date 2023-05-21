@@ -7,7 +7,7 @@ const institutionModel = new mongoose.Schema({
     directorId: {type: String, required: true},
     directorName: {type: String, required: true},
     specialization: {type: String, required: false},
-    joinDate: {type: String, required: true},
+    joinDate: {type: Date, required: true},
     logo: {type: String, required: false},
     isApproved: {type: String, required: true},
     certificate: {type: String, required: true},
