@@ -41,8 +41,8 @@ exports.signup = async (req, res, next) => {
         const {error} = validatePatientSignup(req.body);
         if (error) { return res.status(400).send({ message: error.details[0].message}) }
 
-        const emailAlreadyRegistered = await patientModel.findOne({ email: req.body.email});
-        if (emailAlreadyRegistered) { return res.status(409).send({ message: "Email address already registered" }) }
+        // const emailAlreadyRegistered = await patientModel.findOne({ email: req.body.email});
+        // if (emailAlreadyRegistered) { return res.status(409).send({ message: "Email address already registered" }) }
 
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
         const hashedPassword = await bcrypt.hash(req.body.password, salt);
