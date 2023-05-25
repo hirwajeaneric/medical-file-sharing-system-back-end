@@ -71,11 +71,14 @@ exports.checkForAlert = async (req, res, next) => {
 
     //////////////////////////////////////////////////////////////////////
     // Generating Alert Messages 
+    
     let notification = generateNotificationMessage(testStatistics);
 
     const recordedNotification = await Notifications.create(notification);
     if (recordedNotification) {
         console.log('Notification created.');
+    } else {
+        console.log('Failed to Send Notification.');
     }
 }
 

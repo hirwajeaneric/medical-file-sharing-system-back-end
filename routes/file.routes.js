@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { testing, findAll, add, findById, update, upload, attachFile, findByCreationDate, findByDoctorId, findByType, findByHospitalId, findByPatientId, findByRecordId } = require('../controllers/file.controller');
+const { testing, findAll, add, findById, update, upload, attachFile, findByCreationDate, findByDoctorId, findByType, findByHospitalId, findByPatientId, findByRecordId, checkForAlert } = require('../controllers/file.controller');
 
 router.get('/test', testing);
 router.get('/list', findAll);
@@ -11,8 +11,8 @@ router.get('/findByHospitalId', findByHospitalId);
 router.get('/findByType', findByType);
 router.get('/findByDoctorId', findByDoctorId);
 router.get('/findByCreationDate', findByCreationDate);
-router.post('/new', add);
-router.post('/add', upload.single('fileAttachment'), attachFile, add);
+router.post('/new', add, checkForAlert);
+router.post('/add', upload.single('fileAttachment'), attachFile, add, checkForAlert);
 router.put('/update', upload.single('fileAttachment'), attachFile, update);
 
 module.exports = router;
