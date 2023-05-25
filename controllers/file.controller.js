@@ -4,6 +4,7 @@ const multer = require('multer');
 const moment = require('moment');
 const statisticalGenerator = require('../utils/statisticalGenerator');
 const generateNotificationMessage = require('../utils/generateNotificationMessage');
+const Notifications = require('../models/notifications.model');
 
 exports.testing = (req, res, next) => { res.send('Admin Router works well!'); }
 
@@ -72,7 +73,10 @@ exports.checkForAlert = async (req, res, next) => {
     // Generating Alert Messages 
     let notification = generateNotificationMessage(testStatistics);
 
-    
+    const recordedNotification = await Notifications.create(notification);
+    if (recordedNotification) {
+        console.log('Notification created.');
+    }
 }
 
 exports.update = (req, res, next) => {

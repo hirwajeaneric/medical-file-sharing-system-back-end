@@ -23,7 +23,6 @@ function generateNotificationMessage(testStatistics) {
   
     // Create the notification object
     var notification = {
-      time: Date.now(),
       severity: notificationSeverity,
       message: notificationMessage
     };
