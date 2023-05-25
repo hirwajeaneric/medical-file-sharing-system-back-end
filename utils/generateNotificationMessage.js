@@ -11,13 +11,13 @@ function generateNotificationMessage(testStatistics) {
     testStatistics.testedDiseases.forEach(function(testedDisease) {
       if (testedDisease.frequency >= criticalThreshold) {
         notificationSeverity = 'Critical';
-        notificationMessage = 'Critical condition detected.';
+        notificationMessage =  `The system has detected a Critical increase of cases of ${testedDisease.test}. The system detects now the presence of 40% positive cases of ${testedDisease.test} today. `;
       } else if (testedDisease.frequency >= emergencyThreshold) {
         notificationSeverity = 'Emergency';
-        notificationMessage = 'Emergency condition detected.';
+        notificationMessage = `The system has detected an Emergency increase of cases of ${testedDisease.test}. The system detects now the presence of 60% positive cases of ${testedDisease.test} today. `;
       } else if (testedDisease.frequency >= warningThreshold) {
         notificationSeverity = 'Warning';
-        notificationMessage = 'Warning condition detected.';
+        notificationMessage = `Warning. The system has detected an Extreme number of cases of ${testedDisease.test}. The system detects now the presence of 80% positive cases of ${testedDisease.test} today. `;
       }
     });
   
